@@ -3,46 +3,38 @@ const express = require('express');
 const app = express();
 const port = 3001;
 
-const {fromEnv} = require("@aws-sdk/credential-providers");
-const {DynamoDBClient, QueryCommand, ScanCommand} = require('@aws-sdk/client-dynamodb');
-const dynamoDBClient = new DynamoDBClient({
-    region: "eu-north-1",
-    credentials: fromEnv(),
-});
-const tableName = 'famous-quotes';
+const {getRecordById, getRecordByName, getRecordsByCategory, getAllCategories} = require('./utils/dynamoClient.js');
+const {checkData} = require('./utils/validateData.js');
 
 app.get('/api/getRecordById', async (req, res) => {
     console.log("[getRecordById] STARTED");
     try {
         const id = req.query.id;
 
-        if (id) {
+        checkData(id, 'id');
 
-            const queryItemCommand = new QueryCommand({
-                TableName: tableName,
-                KeyConditionExpression: 'id = :id',
-                ExpressionAttributeValues: {
-                    ':id': {N: id.toString()},
-                },
-            });
-            const response = await dynamoDBClient.send(queryItemCommand);
-            const queryItems = response.Items;
+        const result = await getRecordById(id);
 
-            const person = {
-                id: queryItems[0].id.N,
-                category: queryItems[0].category.S,
-                name: queryItems[0].person.S,
-                photoUrl: queryItems[0].photo.S,
-                quotes: queryItems[0].quotes.L.map(quote => quote.S)
-            }
-
-            res.status(200).json({result: 'Success', person: person});
-        } else {
-            res.status(500).json({result: 'Error', resultDesc: 'Missing parameter id.'});
-        }
+        res.status(200).json(result);
     } catch (error) {
         console.error('[getRecordById] Error:', error.message);
-        res.status(500).json({result: 'Error', resultDesc: 'Internal server error.'});
+        res.status(500).json({result: 'Error', resultDesc: error.message});
+    }
+})
+
+app.get('/api/getRecordByName', async (req, res) => {
+    console.log("[getRecordByName] STARTED");
+    try {
+        const name = req.query.name;
+
+        checkData(name, 'name');
+
+        const result = await getRecordByName(name);
+
+        res.status(200).json(result);
+    } catch (error) {
+        console.error('[getRecordByName] Error:', error.message);
+        res.status(500).json({result: 'Error', resultDesc: error.message});
     }
 })
 
@@ -51,63 +43,27 @@ app.get('/api/getRecordsByCategory', async (req, res) => {
     try {
         const category = req.query.category;
 
-        if (category) {
+        checkData(category, 'category');
 
-            const scanItemsCommand = new ScanCommand({
-                TableName: tableName,
-                FilterExpression: 'category = :categoryName',
-                ExpressionAttributeValues: {
-                    ':categoryName': {S: category.toString()},
-                },
-            });
-            const response = await dynamoDBClient.send(scanItemsCommand);
-            const scanItems = response.Items;
+        const result = await getRecordsByCategory(category);
 
-            res.status(200).json({result: 'Success', people: scanItems});
-        } else {
-            res.status(500).json({result: 'Error', resultDesc: 'Missing parameter category.'});
-        }
+        res.status(200).json(result);
     } catch (error) {
         console.error('[getRecordsByCategory] Error:', error.message);
-        res.status(500).json({result: 'Error', resultDesc: 'Internal server error.'});
+        res.status(500).json({result: 'Error', resultDesc: error.message});
     }
 })
 
-app.get('/api/getRecordsByName', async (req, res) => {
-    console.log("[getRecordsByName] STARTED");
+app.get('/api/getAllCategories', async (req, res) => {
+    console.log("[getAllCategories] STARTED");
     try {
-        const name = req.query.name;
+        const result = await getAllCategories();
 
-        if (name) {
-            console.log("name:" + name);
+        res.status(200).json(result);
 
-            const scanItemsCommand = new ScanCommand({
-                TableName: tableName,
-                FilterExpression: 'person = :personName',
-                ExpressionAttributeValues: {
-                    ':personName': {S: name.toString()},
-                },
-            });
-            const response = await dynamoDBClient.send(scanItemsCommand);
-            const scanItems = response.Items;
-
-            console.log("queryItems", scanItems);
-
-            const person = {
-                id: scanItems[0].id.N,
-                category: scanItems[0].category.S,
-                name: scanItems[0].person.S,
-                photoUrl: scanItems[0].photo.S,
-                quotes: scanItems[0].quotes.L.map(quote => quote.S)
-            }
-
-            res.status(200).json({result: 'Success', person: person});
-        } else {
-            res.status(500).json({result: 'Error', resultDesc: 'Missing parameter category.'});
-        }
     } catch (error) {
-        console.error('[getRecordsByName] Error:', error.message);
-        res.status(500).json({result: 'Error', resultDesc: 'Internal server error.'});
+        console.error('[getAllNames] Error:', error.message);
+        res.status(500).json({result: 'Error', resultDesc: error.message});
     }
 })
 
