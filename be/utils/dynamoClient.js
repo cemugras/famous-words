@@ -133,7 +133,7 @@ async function getAllNames() {
 
         const scanCommand = new ScanCommand({
             TableName: tableName,
-            ProjectionExpression: 'person',
+            ProjectionExpression: 'id,person',
         });
         const response = await dynamoDBClient.send(scanCommand);
 
@@ -141,9 +141,12 @@ async function getAllNames() {
             return {result: 'Warning', resultDesc: 'No data found.'};
         }
 
-        const distinctNames = [...new Set(response.Items.map(item => item.person.S).sort())];
+        const sortedDistinctPeople = response.Items.map(item => ({
+            id: parseInt(item.id.N), // id'yi sayısal değere dönüştürüyoruz
+            person: item.person.S
+        })).sort((a, b) => a.id - b.id);
 
-        return {result: 'Success', people: distinctNames};
+        return {result: 'Success', people: sortedDistinctPeople};
     } catch (error) {
         throw new Error(error.message);
     }
