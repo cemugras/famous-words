@@ -1,9 +1,16 @@
 import React from 'react';
-import Card from '../quotes-card/QuotesCard';
+import QuotesCard from '../quotes-card/QuotesCard';
 
 const Cards = () => {
   return (
-<div></div>
+    <div className='cards-container'>
+      <QuotesCard />
+      <QuotesCard />
+      <QuotesCard />
+      <QuotesCard />
+      <QuotesCard />
+      <QuotesCard />
+    </div>
   );
 };
 

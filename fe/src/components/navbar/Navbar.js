@@ -1,27 +1,8 @@
-import React from 'react';
-import Cards from '../cards/Cards';
-const Navbar = () => {
-  return (
-    // <div className='navbar px-10 gap-20'>
-    //   <div>
-    //     <figure>
-    //       <img className='w-8' src={Logo} alt='logo' />
-    //     </figure>
-    //   </div>
-    //   <div className='menu-lnk'>
-    //     <ul className='menu menu-vertical lg:menu-horizontal rounded-box'>
-    //       <li>
-    //       <button class="btn btn-neutral">Home</button>
-    //       </li>
-    //     </ul>
-    //   </div>
-    //   <div className='search-bar w-1/2'>
-    //     <div className='form-control w-full'>
-    //       <input type='text' placeholder='Search' className='input w-24 md:w-auto bg-platinium' />
-    //     </div>
-    //   </div>
-    // </div>
+import { useState } from 'react';
 
+const Navbar = () => {
+
+  return (
     <div class='wrapper'>
       <div class='top_navbar'>
         <div class='hamburger'>
@@ -31,12 +12,13 @@ const Navbar = () => {
         </div>
         <div class='top_menu'>
           <div class='logo'>logo</div>
+          <div class='search-box'>
+            <button class='btn-search'>
+              <i class='fas fa-search'></i>
+            </button>
+            <input type='text' class='input-search' placeholder='Type to Search...' />
+          </div>
           <ul>
-            <li>
-              <a href='#'>
-                <i class='fas fa-search'></i>
-              </a>
-            </li>
             <li>
               <a href='#'>
                 <i class='fas fa-bell'></i>
@@ -95,13 +77,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div class="main_container">
-<Cards/>
-  </div>
-</div>
-
-
-    
+    </div>
   );
 };
 

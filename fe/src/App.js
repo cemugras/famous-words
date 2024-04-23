@@ -1,14 +1,21 @@
-import './App.css';
-import QuotesCard from './components/quotes-card/QuotesCard';
+import React, { useState } from 'react';
 import Navbar from './components/navbar/Navbar';
+import Cards from './components/cards/Cards';
+import './App.css'
 
-function App() {
+const App = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prevState) => !prevState);
+  };
+
   return (
-    <div className='body'>
-      <Navbar/>
-      <QuotesCard />
+    <div>
+      <Navbar toggleSidebar={toggleSidebar} />
+      <Cards isSidebarOpen={isSidebarOpen} /> {/* `isSidebarOpen` durumu Cards'a aktarılır */}
     </div>
   );
-}
+};
 
 export default App;
