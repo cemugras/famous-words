@@ -1,19 +1,9 @@
 import React from 'react';
-import Card from '../card/Card';
+import Card from '../quotes-card/QuotesCard';
 
 const Cards = () => {
   return (
-    <div className='cards flex flex-wrap justify-center gap-28 mt-4 mx-24'>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </div>
+<div></div>
   );
 };
 
