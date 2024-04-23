@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 const Navbar = () => {
-
   return (
     <div class='wrapper'>
       <div class='top_navbar'>
@@ -38,41 +37,25 @@ const Navbar = () => {
           <li>
             <a href='#'>
               <span class='icon'>
-                <i class='fas fa-book'></i>
+                <i class='fa-solid fa-house'></i>
               </span>
-              <span class='title'>Books</span>
+              <span class='title'>Home</span>
             </a>
           </li>
           <li>
             <a href='#'>
               <span class='icon'>
-                <i class='fas fa-file-video'></i>
+                <i class='fa-solid fa-feather-pointed'></i>
               </span>
-              <span class='title'>Movies</span>
+              <span class='title'>Authors</span>
             </a>
           </li>
           <li>
             <a href='#'>
               <span class='icon'>
-                <i class='fas fa-volleyball-ball'></i>
+                <i class='fa-solid fa-layer-group'></i>
               </span>
-              <span class='title'>Sports</span>
-            </a>
-          </li>
-          <li>
-            <a href='#' class='active'>
-              <span class='icon'>
-                <i class='fas fa-blog'></i>
-              </span>
-              <span class='title'>Blogs</span>
-            </a>
-          </li>
-          <li>
-            <a href='#'>
-              <span class='icon'>
-                <i class='fas fa-leaf'></i>
-              </span>
-              <span class='title'>Nature</span>
+              <span class='title'>Topics</span>
             </a>
           </li>
         </ul>
