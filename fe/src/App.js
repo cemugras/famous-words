@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Navbar from './components/navbar/Navbar';
 import Cards from './components/cards/Cards';
-import './App.css'
+import Header from './components/header/Header';
+import './App.css';
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -12,8 +13,9 @@ const App = () => {
 
   return (
     <div>
-      <Navbar toggleSidebar={toggleSidebar} />
-      <Cards isSidebarOpen={isSidebarOpen} /> {/* `isSidebarOpen` durumu Cards'a aktarılır */}
+      <Navbar/>
+      <Header />
+      <Cards />
     </div>
   );
 };

@@ -10,6 +10,10 @@ const Cards = () => {
       <QuotesCard />
       <QuotesCard />
       <QuotesCard />
+      <QuotesCard />
+      <QuotesCard />
+      <QuotesCard />
+      <QuotesCard />
     </div>
   );
 };

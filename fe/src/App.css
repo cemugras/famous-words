@@ -79,7 +79,7 @@
 .wrapper .sidebar {
   top: 61px;
   background: #2e4ead;
-  width: 200px;
+  width: 13%;
   height: 93vh;
   transition: all 0.3s ease;
 }
@@ -162,21 +162,24 @@
   margin-left: 70px;
 }
 
-.cards-container{
+.cards-container {
   position: absolute;
-  top: 5rem;
-  left: 15rem;
+  left: 15.4rem;
+  padding: 2rem;
+  top: 30rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0 2rem;
+  height: 46.5vh;
 }
 
-.search-box{
+.search-box {
   width: fit-content;
   height: fit-content;
   position: relative;
 }
-.input-search{
+.input-search {
   height: 50px;
   width: 50px;
   border-style: none;
@@ -185,19 +188,19 @@
   letter-spacing: 2px;
   outline: none;
   border-radius: 25px;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   background-color: #fff;
-  border: 1px solid #2e4ead;;
+  border: 1px solid #2e4ead;
   padding-right: 40px;
-  color:#fff;
+  color: #fff;
 }
-.input-search::placeholder{
-  color:#2e4ead;
+.input-search::placeholder {
+  color: #2e4ead;
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: 100;
 }
-.btn-search{
+.btn-search {
   width: 50px;
   height: 50px;
   border-style: none;
@@ -208,31 +211,85 @@
   border-radius: 50%;
   position: absolute;
   right: 0px;
-  color:#2e4ead;
-  background-color:transparent;
-  pointer-events: painted;  
+  color: #2e4ead;
+  background-color: transparent;
+  pointer-events: painted;
 }
-.btn-search:focus ~ .input-search{
+.btn-search:focus ~ .input-search {
   width: 300px;
   border-radius: 0px;
   background-color: transparent;
-  border-bottom:1px solid #2e4ead;
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  border-bottom: 1px solid #2e4ead;
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
 }
-.input-search:focus{
+.input-search:focus {
   width: 300px;
   border-radius: 0px;
   background-color: transparent;
-  border-bottom:1px solid #2e4ead;
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  border-bottom: 1px solid #2e4ead;
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem 0;
+  position: absolute;
+  top: 4.1rem;
+  left: 15.4rem;
+  width: 87%;
+  height: 46.5vh;
+  padding: 2rem;
+}
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
 
+.section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  transition: flex 0.4s ease;
+  position: relative;
+}
 
+.section .overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: background-color 0.8s ease;
+}
 
+.section .content {
+  z-index: 2;
+}
 
+.section:hover {
+  flex: 2;
+}
 
+.section:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.95);
+}
 
+#marketing {
+  background-image: url(https://cdn.kayiprihtim.com/wp-content/uploads/2020/11/Julius-Caesar-Hayati-Sozleri-Kimdir-758x403.jpeg);
+}
 
+#technology {
+  background-image: url(https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1814000/elon-musk-reuters-1815024.jpg);
+}
 
-
+#advertising {
+  background-image: url(https://media.licdn.com/dms/image/D5612AQFn5ra1dMU1QA/article-cover_image-shrink_600_2000/0/1674618021713?e=2147483647&v=beta&t=pbVYNdN5VhHl6b26_ZO2IIyjyfIR_cs7VJstR05j4cM);
+}

@@ -11,27 +11,16 @@ const Navbar = () => {
         </div>
         <div class='top_menu'>
           <div class='logo'>logo</div>
-          <div class='search-box'>
-            <button class='btn-search'>
-              <i class='fas fa-search'></i>
-            </button>
-            <input type='text' class='input-search' placeholder='Type to Search...' />
-          </div>
-          <ul>
-            <li>
-              <a href='#'>
-                <i class='fas fa-bell'></i>
-              </a>
-            </li>
-            <li>
-              <a href='#'>
-                <i class='fas fa-user'></i>
-              </a>
-            </li>
-          </ul>
+          <li>
+            <div class='search-box'>
+              <button class='btn-search'>
+                <i class='fas fa-search'></i>
+              </button>
+              <input type='text' class='input-search' placeholder='Type to Search...' />
+            </div>
+          </li>
         </div>
       </div>
-
       <div class='sidebar'>
         <ul>
           <li>
