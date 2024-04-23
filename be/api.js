@@ -3,7 +3,13 @@ const express = require('express');
 const app = express();
 const port = 3001;
 
-const {getRecordById, getRecordByName, getRecordsByCategory, getAllCategories} = require('./utils/dynamoClient.js');
+const {
+    getRecordById,
+    getRecordByName,
+    getRecordsByCategory,
+    getAllCategories,
+    getAllNames
+} = require('./utils/dynamoClient.js');
 const {checkData} = require('./utils/validateData.js');
 
 app.get('/api/getRecordById', async (req, res) => {
@@ -58,6 +64,19 @@ app.get('/api/getAllCategories', async (req, res) => {
     console.log("[getAllCategories] STARTED");
     try {
         const result = await getAllCategories();
+
+        res.status(200).json(result);
+
+    } catch (error) {
+        console.error('[getAllCategories] Error:', error.message);
+        res.status(500).json({result: 'Error', resultDesc: error.message});
+    }
+})
+
+app.get('/api/getAllNames', async (req, res) => {
+    console.log("[getAllNames] STARTED");
+    try {
+        const result = await getAllNames();
 
         res.status(200).json(result);
 

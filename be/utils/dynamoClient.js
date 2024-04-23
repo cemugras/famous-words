@@ -128,4 +128,25 @@ async function getAllCategories() {
     }
 }
 
-module.exports = {getRecordById, getRecordByName, getRecordsByCategory, getAllCategories};
+async function getAllNames() {
+    try {
+
+        const scanCommand = new ScanCommand({
+            TableName: tableName,
+            ProjectionExpression: 'person',
+        });
+        const response = await dynamoDBClient.send(scanCommand);
+
+        if (response.Count === 0) {
+            return {result: 'Warning', resultDesc: 'No data found.'};
+        }
+
+        const distinctNames = [...new Set(response.Items.map(item => item.person.S).sort())];
+
+        return {result: 'Success', people: distinctNames};
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+module.exports = {getRecordById, getRecordByName, getRecordsByCategory, getAllCategories, getAllNames};
