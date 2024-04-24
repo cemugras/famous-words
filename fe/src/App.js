@@ -1,12 +1,23 @@
+import React, { useState } from 'react';
+import Navbar from './components/navbar/Navbar';
+import Cards from './components/cards/Cards';
+import Header from './components/header/Header';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prevState) => !prevState);
+  };
+
   return (
-    <div className="App">
-      <h1>FAMOUS WORDS</h1>
-      <h2>TEST</h2>
+    <div>
+      <Navbar/>
+      <Header />
+      <Cards />
     </div>
   );
-}
+};
 
 export default App;
