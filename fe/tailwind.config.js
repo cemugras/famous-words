@@ -26,6 +26,5 @@ module.exports = {
     colors: {
       platinium: '#F1F1F1',
     },
-  },
-  plugins: [require('daisyui')],
+  }
 };
