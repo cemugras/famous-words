@@ -8,7 +8,7 @@ export const AppProvider = ({ children }) => {
   const [nameList, setNameList] = useState([]);
   const bannerListTemp = [];
   const [bannerList, setBannerList] = useState('');
-  console.log(bannerList);
+
 
   // To get names from API
   const fetchNames = async () => {
