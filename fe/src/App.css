@@ -281,15 +281,3 @@
 .section:hover .overlay {
   background-color: rgba(0, 0, 0, 0.95);
 }
-
-#marketing {
-  background-image: url(https://cdn.kayiprihtim.com/wp-content/uploads/2020/11/Julius-Caesar-Hayati-Sozleri-Kimdir-758x403.jpeg);
-}
-
-#technology {
-  background-image: url(https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1814000/elon-musk-reuters-1815024.jpg);
-}
-
-#advertising {
-  background-image: url(https://media.licdn.com/dms/image/D5612AQFn5ra1dMU1QA/article-cover_image-shrink_600_2000/0/1674618021713?e=2147483647&v=beta&t=pbVYNdN5VhHl6b26_ZO2IIyjyfIR_cs7VJstR05j4cM);
-}
