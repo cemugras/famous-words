@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
+import { AppProvider } from './components/context/AppContext';
 import Navbar from './components/navbar/Navbar';
 import Cards from './components/cards/Cards';
-import Header from './components/header/Header';
+import Banner from './components/banner/Banner';
 import './App.css';
 
 const App = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen((prevState) => !prevState);
-  };
-
   return (
     <div>
-      <Navbar/>
-      <Header />
-      <Cards />
+      <AppProvider>
+        <Navbar />
+        <Banner />
+        <Cards />
+      </AppProvider>
     </div>
   );
 };
