@@ -9,5 +9,8 @@
     { "src": "/api/getRecordsByCategory", "dest": "api.js" },
     { "src": "/api/getAllCategories", "dest": "api.js" },
     { "src": "/api/getAllNames", "dest": "api.js" }
+  ],
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" }
   ]
 }
