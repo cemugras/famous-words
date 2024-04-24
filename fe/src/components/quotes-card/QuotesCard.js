@@ -60,7 +60,7 @@ const QuotesCard = () => {
                   cursor: 'pointer',
                 }}
               >
-               <i class="fa-solid fa-thumbs-up"></i>
+               <i className="fa-solid fa-thumbs-up"></i>
                   👍
        
               </button>

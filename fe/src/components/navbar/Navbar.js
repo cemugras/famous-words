@@ -2,49 +2,49 @@ import { useState } from 'react';
 
 const Navbar = () => {
   return (
-    <div class='wrapper'>
-      <div class='top_navbar'>
-        <div class='hamburger'>
-          <div class='one'></div>
-          <div class='two'></div>
-          <div class='three'></div>
+    <div className='wrapper'>
+      <div className='top_navbar'>
+        <div className='hamburger'>
+          <div className='one'></div>
+          <div className='two'></div>
+          <div className='three'></div>
         </div>
-        <div class='top_menu'>
-          <div class='logo'>logo</div>
+        <div className='top_menu'>
+          <div className='logo'>logo</div>
           <li>
-            <div class='search-box'>
-              <button class='btn-search'>
-                <i class='fas fa-search'></i>
+            <div className='search-box'>
+              <button className='btn-search'>
+                <i className='fas fa-search'></i>
               </button>
-              <input type='text' class='input-search' placeholder='Type to Search...' />
+              <input type='text' className='input-search' placeholder='Type to Search...' />
             </div>
           </li>
         </div>
       </div>
-      <div class='sidebar'>
+      <div className='sidebar'>
         <ul>
           <li>
             <a href='#'>
-              <span class='icon'>
-                <i class='fa-solid fa-house'></i>
+              <span className='icon'>
+                <i className='fa-solid fa-house'></i>
               </span>
-              <span class='title'>Home</span>
+              <span className='title'>Home</span>
             </a>
           </li>
           <li>
             <a href='#'>
-              <span class='icon'>
-                <i class='fa-solid fa-feather-pointed'></i>
+              <span className='icon'>
+                <i className='fa-solid fa-feather-pointed'></i>
               </span>
-              <span class='title'>Authors</span>
+              <span className='title'>Authors</span>
             </a>
           </li>
           <li>
             <a href='#'>
-              <span class='icon'>
-                <i class='fa-solid fa-layer-group'></i>
+              <span className='icon'>
+                <i className='fa-solid fa-layer-group'></i>
               </span>
-              <span class='title'>Topics</span>
+              <span className='title'>Topics</span>
             </a>
           </li>
         </ul>
