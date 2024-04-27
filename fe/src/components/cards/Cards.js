@@ -5,15 +5,7 @@ const Cards = () => {
   return (
     <div className='cards-container'>
       <QuotesCard />
-      <QuotesCard />
-      <QuotesCard />
-      <QuotesCard />
-      <QuotesCard />
-      <QuotesCard />
-      <QuotesCard />
-      <QuotesCard />
-      <QuotesCard />
-      <QuotesCard />
+
     </div>
   );
 };
