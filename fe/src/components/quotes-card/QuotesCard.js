@@ -61,14 +61,24 @@ const QuotesCard = () => {
                 }}
               >
                <i className="fa-solid fa-thumbs-up"></i>
-                  👍
-       
+                  
+                
               </button>
-              <button style={{ fontSize: '20px', background: 'transparent', border: 'none', cursor: 'pointer' }}>
-                <span role='img' aria-label='thumbs-down'>
-                  👎
-                </span>
+              <button
+                style={{
+                  fontSize: '20px',
+                  marginRight: '10px',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                <i class="fa-solid fa-thumbs-down"></i>
+
+
               </button>
+              
+              
             </div>
           </div>
         </div>
