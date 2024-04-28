@@ -14,6 +14,8 @@ const QuotesCard = () => {
         {allDataList.map((item, index) => (
           <div key={index}>
             <h1>{item.person.id}</h1>
+            <h1>{item.person.category}</h1>
+            <h1>{item.person.name}</h1>
           </div>
         ))}
       </Col>

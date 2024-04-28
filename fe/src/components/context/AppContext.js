@@ -57,7 +57,7 @@ export const AppProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  return <AppContext.Provider value={{ nameList, bannerList }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ nameList, bannerList, allDataList }}>{children}</AppContext.Provider>;
 };
 
 export default AppContext;
