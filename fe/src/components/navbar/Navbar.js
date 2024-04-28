@@ -21,7 +21,7 @@ const Navbar = () => {
           </li>
         </div>
       </div>
-      <div className='sidebar'>
+      {/* <div className='sidebar'>
         <ul>
           <li>
             <a href='#'>
@@ -48,7 +48,7 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };
