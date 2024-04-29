@@ -10,7 +10,7 @@ const Banner = () => {
   }
 
   return (
-    <div className='header'>
+    <div className='banner'>
       <div className='container'>
         {bannerList.map((item, index) => (
           <div
