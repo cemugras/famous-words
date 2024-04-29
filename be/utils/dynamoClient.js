@@ -47,9 +47,9 @@ async function getRecordByName(name) {
     try {
         const scanItemsCommand = new ScanCommand({
             TableName: tableName,
-            FilterExpression: 'person = :personName',
+            FilterExpression: 'personName = :person',
             ExpressionAttributeValues: {
-                ':personName': {S: name.toString()},
+                ':person': {S: name.toString()},
             },
         });
         const response = await dynamoDBClient.send(scanItemsCommand);
@@ -145,7 +145,7 @@ async function getAllNames() {
 
         const scanCommand = new ScanCommand({
             TableName: tableName,
-            ProjectionExpression: 'id,person',
+            ProjectionExpression: 'id,personName',
         });
         const response = await dynamoDBClient.send(scanCommand);
 
@@ -155,7 +155,7 @@ async function getAllNames() {
 
         const sortedDistinctPeople = response.Items.map(item => ({
             id: parseInt(item.id.N), // id'yi sayısal değere dönüştürüyoruz
-            person: item.person.S
+            person: item.personName.S
         })).sort((a, b) => a.id - b.id);
 
         return {result: 'Success', people: sortedDistinctPeople};
