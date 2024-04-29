@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { useContext } from 'react';
-import AppContext from '../context/AppContext';
+import AppContext from '../../../context/AppContext';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import parse from 'autosuggest-highlight/parse';
 import match from 'autosuggest-highlight/match';
-import { all } from 'axios';
 
 const SearchBox = () => {
   const { allDataList } = useContext(AppContext);

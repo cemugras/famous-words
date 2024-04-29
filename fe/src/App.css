@@ -40,6 +40,7 @@ body {
   text-decoration: none;
   font-weight: 900;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .navbar nav a:hover {
