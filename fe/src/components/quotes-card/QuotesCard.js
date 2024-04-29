@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import SocialShare from '../social-share/SocialShare';
+import LikeButton from '../like-button/LikeButton';
 const QuotesCard = () => {
   const { allDataList } = useContext(AppContext);
   if (!allDataList) {
@@ -38,8 +39,8 @@ const QuotesCard = () => {
                 </div>
               );
             })}
-
-<SocialShare/>
+            <SocialShare />
+            <LikeButton />
           </div>
         </div>
       ))}
