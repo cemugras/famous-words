@@ -23,13 +23,19 @@ async function getRecordById(id) {
 
         const queryItems = response.Items;
 
-        const person = {
-            id: queryItems[0].id.N,
-            category: queryItems[0].category.S,
-            name: queryItems[0].person.S,
-            photoUrl: queryItems[0].photo.S,
-            quotes: queryItems[0].quotes.L.map(quote => quote.S)
-        }
+        const person = Object.fromEntries(
+            Object.entries(queryItems[0]).map(([key, value]) => {
+                if ('S' in value) {
+                    return [key, value['S']];
+                } else if ('N' in value) {
+                    return [key, value['N']];
+                } else if ('L' in value) {
+                    return [key, value['L'].map(item => item['S'])];
+                } else {
+                    return [key, value];
+                }
+            })
+        );
 
         return {result: 'Success', person: person};
     } catch (error) {
@@ -54,13 +60,19 @@ async function getRecordByName(name) {
 
         const scanItems = response.Items;
 
-        const person = {
-            id: scanItems[0].id.N,
-            category: scanItems[0].category.S,
-            name: scanItems[0].person.S,
-            photoUrl: scanItems[0].photo.S,
-            quotes: scanItems[0].quotes.L.map(quote => quote.S)
-        }
+        const person = Object.fromEntries(
+            Object.entries(scanItems[0]).map(([key, value]) => {
+                if ('S' in value) {
+                    return [key, value['S']];
+                } else if ('N' in value) {
+                    return [key, value['N']];
+                } else if ('L' in value) {
+                    return [key, value['L'].map(item => item['S'])];
+                } else {
+                    return [key, value];
+                }
+            })
+        );
 
         return {result: 'Success', person: person};
     } catch (error) {
