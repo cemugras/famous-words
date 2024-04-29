@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import AppContext from '../context/AppContext';
+import AppContext from '../../../context/AppContext';
 import SocialShare from '../social-share/SocialShare';
 import LikeButton from '../like-button/LikeButton';
 const QuotesCard = () => {

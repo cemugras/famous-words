@@ -1,19 +1,23 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { AppProvider } from './components/context/AppContext';
-import Navbar from './components/navbar/Navbar';
-import Cards from './components/cards/Cards';
-import Banner from './components/banner/Banner';
+import Home from './components/home/Home';
+import Authors from './components/authors/Authors';
+import Topics from './components/topics/Topics';
 import './App.css';
 
 const App = () => {
   return (
-    <div>
+    <BrowserRouter>
       <AppProvider>
-        <Navbar />
-        <Banner />
-        <Cards />
+        <Routes>
+          <Route path='/home' element={<Home />}></Route>
+          <Route path='/authors' element={<Authors />}></Route>
+          <Route path='/topics' element={<Topics />}></Route>
+          <Route path='/' element={<Navigate to='/home' />} />
+        </Routes>
       </AppProvider>
-    </div>
+    </BrowserRouter>
   );
 };
 
