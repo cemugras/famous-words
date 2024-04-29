@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
-      <img className='navbar-logo' src={Logo} alt='famous-quotes' />
+      <img onClick={handleHomeNavigate} className='navbar-logo' src={Logo} alt='famous-quotes' />
       <nav>
         <a onClick={handleHomeNavigate}>HOME</a>
         <a onClick={handleAuthorsNavigate}>
