@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
-
+import SocialShare from '../social-share/SocialShare';
 const QuotesCard = () => {
   const { allDataList } = useContext(AppContext);
   if (!allDataList) {
@@ -39,35 +39,7 @@ const QuotesCard = () => {
               );
             })}
 
-            <div className='button' style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <button className='button-btn'
-                style={{
-                  
-                }}
-              >
-                Normal Buton
-              </button>
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <button
-                  style={{
-                    background: 'transparent',
-                    border: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <i className='fa-solid fa-thumbs-up'></i>
-                </button>
-                <button
-                  style={{
-                    background: 'transparent',
-                    border: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <span>tags:</span> <p style={{ textDecoration: 'underline' }}>{item.person.category}</p>
-                </button>
-              </div>
-            </div>
+<SocialShare/>
           </div>
         </div>
       ))}
