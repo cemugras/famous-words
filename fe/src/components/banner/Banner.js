@@ -11,7 +11,6 @@ const Banner = () => {
 
   return (
     <div className='header'>
-      <h1>TOP AUTHORS</h1>
       <div className='container'>
         {bannerList.map((item, index) => (
           <div
