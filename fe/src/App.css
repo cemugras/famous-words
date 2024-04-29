@@ -47,6 +47,10 @@ body {
   color: #0077c0;
 }
 
+.navbar img{
+  cursor: pointer;
+}
+
 /* SEARCHBOX */
 .person-list{
   width: 100%;
