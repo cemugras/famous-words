@@ -33,7 +33,7 @@ const QuotesCard = () => {
               return (
                 <div key={index}>
                   <p style={{ lineHeight: '1.5', fontSize: '1rem', marginBottom: '20px' }}>
-                    <i class='fa-solid fa-quote-left'></i> {quote} <i class='fa-solid fa-quote-right'></i>
+                    <i className='fa-solid fa-quote-left'></i> {quote} <i className='fa-solid fa-quote-right'></i>
                   </p>
                 </div>
               );
