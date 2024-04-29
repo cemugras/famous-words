@@ -47,12 +47,12 @@ body {
   color: #0077c0;
 }
 
-.navbar img{
+.navbar img {
   cursor: pointer;
 }
 
 /* SEARCHBOX */
-.person-list{
+.person-list {
   width: 100%;
   display: flex;
   align-items: center;
@@ -241,7 +241,7 @@ button:hover {
 }
 .btn-share::before {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   z-index: -1;
@@ -251,7 +251,8 @@ button:hover {
   border-radius: 24px;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.btn-share .btn-text, .btn-share .btn-icon {
+.btn-share .btn-text,
+.btn-share .btn-icon {
   display: inline-flex;
   vertical-align: middle;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -285,7 +286,7 @@ button:hover {
   color: #fff;
 }
 
-.btn-share:hover{
+.btn-share:hover {
   border-radius: 0;
 }
 .btn-share .social-icons li a:hover {
@@ -294,7 +295,8 @@ button:hover {
 .btn-share:hover::before {
   transform: scale(1.2);
 }
-.btn-share:hover .btn-text, .btn-share:hover .btn-icon {
+.btn-share:hover .btn-text,
+.btn-share:hover .btn-icon {
   transform: translateY(-55px);
 }
 .btn-share:hover .social-icons li a {
@@ -314,7 +316,7 @@ button:hover {
 .heart {
   width: 100px;
   height: 100px;
-  background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+  background: url('https://cssanimation.rocks/images/posts/steps/heart.png') no-repeat;
   background-position: 0 0;
   cursor: pointer;
   transition: background-position 1s steps(28);
@@ -325,9 +327,134 @@ button:hover {
   background-position: -2800px 0;
 }
 
-.social{
+.social {
   display: flex;
   align-items: center;
   height: 50px;
   padding: 2rem 0;
+}
+
+/* AUTHOR PAGE */
+.author-header {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem 0;
+}
+
+.author-header h1, .author-quotes h1 {
+  border-bottom: 1px solid black;
+  line-height: 4rem;
+}
+
+.author-info {
+  display: flex;
+  height: 60vh;
+  width: 60vw;
+  display: flex;
+}
+
+.author-info img,
+.info-text {
+  height: 100%;
+  width: 50%;
+}
+
+.author-info p {
+  line-height: 2rem;
+}
+
+.info-text {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+/* QUOTE CARD */
+.animated-border-quote {
+  display: flex;
+  margin: 1em;
+  max-width: 20em;
+  overflow: hidden;
+}
+.animated-border-quote blockquote {
+  background-color: #fff;
+  border: solid 2px #757575;
+  display: inline-block;
+  margin: 0;
+  padding: 1em;
+  position: relative;
+}
+.animated-border-quote blockquote:before {
+  animation: clockwise 30s infinite linear;
+  background-color: #fff;
+  bottom: 10%;
+  content: "";
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  top: 10%;
+}
+.animated-border-quote blockquote:after {
+  animation: counter 30s infinite linear;
+  background-color: #fff;
+  bottom: 10%;
+  content: "";
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  top: 10%;
+}
+.animated-border-quote blockquote cite {
+  display: block;
+  font-style: italic;
+  text-align: right;
+}
+.animated-border-quote blockquote cite:before {
+  content: "- ";
+}
+.animated-border-quote blockquote > * {
+  position: relative;
+  z-index: 1;
+}
+@keyframes clockwise {
+  0% {
+    transform: rotate(0);
+ }
+  100% {
+    transform: rotate(360deg);
+ }
+}
+@keyframes counter {
+  0% {
+    transform: rotate(0);
+ }
+  100% {
+    transform: rotate(-360deg);
+ }
+}
+
+.author-quotes{
+  display: flex;
+  flex-direction: column;
+align-items: center;
+}
+
+.quote-card{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem 0;
 }
