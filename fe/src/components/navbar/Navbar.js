@@ -1,25 +1,19 @@
-
 import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-// import parse from 'autosuggest-highlight/parse';
-// import match from 'autosuggest-highlight/match';
+import Logo from '../../assets/famous-quotes-logo.png';
+import SearchBox from '../search-box/SearchBox';
 
 const Navbar = () => {
   return (
-    <div>
+    <div className='navbar'>
+      <img className='navbar-logo' src={Logo} alt='famous-quotes' />
       <nav>
-        <a href='#'>Home</a>
-        <a href='#'>Authors</a>
-        <a href='#'>Topics</a>
-        <div class='animation start-home'></div>
+        <a href='#'>HOME</a>
+        <a href='#'>AUTHORS</a>
+        <a href='#'>TOPICS</a>
       </nav>
-      
+      <SearchBox />
     </div>
-    
   );
 };
 
 export default Navbar;
-
-
