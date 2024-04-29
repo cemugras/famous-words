@@ -39,8 +39,10 @@ const QuotesCard = () => {
                 </div>
               );
             })}
-            <SocialShare />
-            <LikeButton />
+            <div className='social'>
+              <SocialShare />
+              <LikeButton />
+            </div>
           </div>
         </div>
       ))}

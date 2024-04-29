@@ -319,3 +319,10 @@ button:hover {
   transition-duration: 1s;
   background-position: -2800px 0;
 }
+
+.social{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 2rem 0;
+}
