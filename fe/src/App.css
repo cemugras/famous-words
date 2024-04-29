@@ -199,8 +199,17 @@ body {
   width: 100%;
 }
 
-.button-btn:hover{
-  background: #3C5B6F ;
+.button-btn {
+  fontsize: 16px;
+  padding: 8px 16px;
+  background: #153448;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  transition: 0.4s;
+}
+.button-btn:hover {
+  background: #3c5b6f;
 }
 
 .search-box {

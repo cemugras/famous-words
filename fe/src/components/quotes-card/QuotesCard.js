@@ -42,13 +42,7 @@ const QuotesCard = () => {
             <div className='button' style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <button className='button-btn'
                 style={{
-                  fontSize: '16px',
-                  padding: '8px 16px',
-                  background: '#153448',
-                  color: '#fff',
-                  border: 'none',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
+                  
                 }}
               >
                 Normal Buton
