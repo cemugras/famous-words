@@ -575,7 +575,8 @@ a {
   text-decoration: none;
   color: #0033cc;
 }
-ul, li {
+ul,
+li {
   list-style: none;
   vertical-align: middle;
 }
@@ -595,22 +596,28 @@ ul.list {
   border-bottom: 1px solid #eee;
   line-height: 44px;
   height: 44px;
+  color: darkgray;
+}
+
+.list li a {
+  text-decoration: none;
+  color: darkgray;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 .list .divider {
   font-size: 20px;
   font-weight: bold;
-  background: #fafafa;
   box-shadow: -60px 0 0 #fafafa;
   line-height: 28px;
   height: 28px;
-  margin-top: -1px;
-  position: -webkit-sticky;
-  top: 44px;
+  color: black;
 }
+
 header {
   line-height: 44px;
   height: 44px;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
   width: 100%;
   position: absolute;
   text-align: center;
@@ -619,16 +626,4 @@ header {
 }
 #scrolling {
   padding-top: 44px;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 0;
-}
-
-/* safari mobile seems to be calculating the position differently, for sticky elements, so we target them with this media query */
-
-@media (-webkit-min-device-pixel-ratio: 2) {
-.list .divider { top: 0; }
 }
