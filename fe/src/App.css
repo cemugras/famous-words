@@ -344,7 +344,8 @@ button:hover {
   gap: 2rem 0;
 }
 
-.author-header h1, .author-quotes h1 {
+.author-header h1,
+.author-quotes h1 {
   border-bottom: 1px solid black;
   line-height: 4rem;
 }
@@ -394,7 +395,7 @@ button:hover {
   animation: clockwise 30s infinite linear;
   background-color: #fff;
   bottom: 10%;
-  content: "";
+  content: '';
   left: 0;
   opacity: 0.5;
   position: absolute;
@@ -405,7 +406,7 @@ button:hover {
   animation: counter 30s infinite linear;
   background-color: #fff;
   bottom: 10%;
-  content: "";
+  content: '';
   left: 0;
   opacity: 0.5;
   position: absolute;
@@ -418,7 +419,7 @@ button:hover {
   text-align: right;
 }
 .animated-border-quote blockquote cite:before {
-  content: "- ";
+  content: '- ';
 }
 .animated-border-quote blockquote > * {
   position: relative;
@@ -427,34 +428,141 @@ button:hover {
 @keyframes clockwise {
   0% {
     transform: rotate(0);
- }
+  }
   100% {
     transform: rotate(360deg);
- }
+  }
 }
 @keyframes counter {
   0% {
     transform: rotate(0);
- }
+  }
   100% {
     transform: rotate(-360deg);
- }
+  }
 }
 
-.author-quotes{
+.author-quotes {
   display: flex;
   flex-direction: column;
-align-items: center;
+  align-items: center;
 }
 
-.quote-card{
+.quote-card {
   display: flex;
   flex-wrap: wrap;
 }
 
-.page-container{
+.page-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 3rem 0;
+}
+
+/* AUTHORS PAGE */
+/* AUTHORS PAGE */
+.AlphabetNav {
+  position: sticky;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-flow: wrap row;
+  padding: 0.5rem;
+  background: ghostwhite;
+}
+.AlphabetNav a {
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+  border-radius: 8px;
+  font-size: 1.2em;
+  line-height: 1;
+  font-weight: 500;
+  text-decoration: none;
+  color: darkgray;
+}
+.AlphabetNav a:hover {
+  background: #ddd;
+  color: #444;
+}
+.AlphabetNav .active {
+  background: #f46353;
+  color: white;
+}
+/* Contact List */
+.ContactList {
+  padding: 10em 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.Contact {
+  display: flex;
+  align-items: center;
+  width: 90%;
+}
+.ContactList .Contact {
+  margin-bottom: 1.5rem;
+}
+.Contact-avatar {
+  margin: 0 1em 0 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #a7c031;
+}
+.Contact-name {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: darkgray;
+}
+@media (min-width: 400px) {
+  .AlphabetNav {
+    top: 2vh;
+    right: 0;
+    height: 90vh;
+    width: 9em;
+  }
+  .AlphabetNav a {
+    width: calc(100% * 1 / 3 - 0.3em);
+  }
+  .ContactList {
+    padding-top: 2rem;
+  }
+}
+@media (min-width: 400px) and (min-height: 600px) {
+  .AlphabetNav {
+    width: 6em;
+  }
+  .AlphabetNav a {
+    width: calc(100% * 1 / 2 - 0.5em);
+    margin: 0.25em;
+  }
+}
+@media (min-width: 800px) {
+  .AlphabetNav {
+    top: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: nowrap row;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    background: ghostwhite;
+  }
+  .AlphabetNav a {
+    margin: 0.5em 0;
+    padding: 0.5em 0;
+  }
+  .ContactList {
+    padding-top: 6rem;
+  }
+  .Contact {
+    width: calc(100% * 1 / 3 - 2rem);
+  }
 }
