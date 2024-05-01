@@ -2,23 +2,23 @@ import {useContext} from 'react';
 import AppContext from '../../../context/AppContext';
 
 const Banner = () => {
-    const {bannerList} = useContext(AppContext);
+    const {homePageData} = useContext(AppContext);
 
-    if (!bannerList || bannerList.length < 3) {
+    if (!homePageData || homePageData.length < 3) {
         return <div>Loading...</div>;
     }
 
     return (
         <div className='banner'>
             <div className='container'>
-                {bannerList.map((item, index) => (
+                {homePageData.slice(0, 3).map((item, index) => (
                     <div
                         key={index}
                         className='section'
-                        style={{backgroundImage: `url(${item.person.photoUrl})`}}
+                        style={{backgroundImage: `url(${item.photoUrl})`}}
                     >
                         <div className='content'>
-                            <h1>{item.person.personName}</h1>
+                            <h1>{item.personName}</h1>
                         </div>
                         <div className='overlay'></div>
                     </div>
