@@ -22,11 +22,11 @@ const AlphabetNav = ({ activeLetter, onLetterClick }) => {
 };
 
 const Authors = () => {
-  const { allDataForSearch } = useContext(AppContext); // Context'ten veri alın
+  const { allDataForSearch } = useContext(AppContext); 
   const [activeLetter, setActiveLetter] = useState(null);
 
   if (!allDataForSearch || allDataForSearch.length === 0) {
-    return <div>Loading...</div>; // Veri yüklenirken mesaj
+    return <div>Loading...</div>; 
   }
 
   const handleLetterClick = (letter) => {
@@ -37,7 +37,7 @@ const Authors = () => {
     }
   };
 
-  // `activeLetter` yoksa, tüm kişileri göster; varsa, filtrele
+  // if activeLetter does not exists show all people, else filter
   const displayedContacts = !activeLetter
     ? allDataForSearch.sort((a, b) => a.person.localeCompare(b.person))
     : allDataForSearch
@@ -48,7 +48,7 @@ const Authors = () => {
     <>
       <AlphabetNav activeLetter={activeLetter} onLetterClick={handleLetterClick} />
 
-      {/* Eğer filtrelenmiş listede veri yoksa uyarı mesajı */}
+      {/* If there is no data of filtered list, show message */}
       {displayedContacts.length === 0 ? (
         <div>No contacts found for the selected letter.</div>
       ) : (
