@@ -8,16 +8,16 @@ import LikeButton from '../../components/home/sections/like-button/LikeButton';
 const Author = () => {
   const location = useLocation();
   const id = location.state?.id;
-  const { getDataById, authorData } = useContext(AppContext);
+  const { getDataById, authorData, setAuthorData } = useContext(AppContext);
 
   useEffect(() => {
     getDataById(id);
+    setAuthorData(null);
   }, [id]);
   if (!authorData) {
     return <div>Loading...</div>;
   }
-  console.log('authorData', authorData);
-  console.log('id', id);
+
   return (
     <div className='page-container'>
       <div className='author-header'>

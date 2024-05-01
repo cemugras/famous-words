@@ -61,7 +61,7 @@ export const AppProvider = ({children}) => {
     }, []);
 
     return <AppContext.Provider
-        value={{homePageData, authorData, allDataForSearch, getDataById, allCategories}}>{children}</AppContext.Provider>;
+        value={{homePageData, authorData, allDataForSearch, getDataById, allCategories, setAuthorData}}>{children}</AppContext.Provider>;
 };
 
 export default AppContext;
