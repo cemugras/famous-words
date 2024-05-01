@@ -10,12 +10,13 @@ import {useNavigate} from 'react-router-dom';
 const {urlEncryptor} = require('../../utils/endpointUtils');
 
 const SearchBox = () => {
-    const {allDataList} = useContext(AppContext);
+    const {allDataForSearch} = useContext(AppContext);
     const navigate = useNavigate();
 
-    if (!allDataList) {
+    if (!allDataForSearch) {
         return <div>Loading...</div>;
     }
+
     return (
         <Autocomplete
             className='search-box'
@@ -23,20 +24,20 @@ const SearchBox = () => {
             sx={{width: 300}}
             onChange={(event, newValue) => {
                 if (newValue) {
-                    navigate('/' + urlEncryptor(newValue.person.personName));
+                    navigate('/' + urlEncryptor(newValue.person), {state: {id: newValue.id}});
                 }
             }}
-            options={allDataList}
-            getOptionLabel={(option) => option.person.personName}
+            options={allDataForSearch}
+            getOptionLabel={(option) => option.person}
             renderInput={(params) => <TextField {...params} label='Search' margin='normal'/>}
             renderOption={(props, option, {inputValue}) => {
-                const matches = match(option.person.personName, inputValue, {insideWords: true});
-                const parts = parse(option.person.personName, matches);
+                const matches = match(option.person, inputValue, {insideWords: true});
+                const parts = parse(option.person, matches);
 
                 return (
                     <li {...props}>
                         <div className='person-list'>
-                            <img className='person-img' src={option.person.photoUrl} alt={option.personName}/>
+                            <img className='person-img' src={option.photoUrl} alt={option.person}/>
                             <div>
                                 {parts.map((part, index) => (
                                     <span

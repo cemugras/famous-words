@@ -3,34 +3,34 @@ import AppContext from '../../../context/AppContext';
 import SocialShare from '../social-share/SocialShare';
 import LikeButton from '../like-button/LikeButton';
 const QuotesCard = () => {
-  const { allDataList } = useContext(AppContext);
-  if (!allDataList) {
+  const { homePageData } = useContext(AppContext);
+  if (!homePageData) {
     return <div>Loading...</div>;
   }
 
   return (
     <div className='cards'>
-      {allDataList.map((item, index) => (
+      {homePageData.map((item, index) => (
         <div key={index}>
           <div className='card'>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '12px' }}>
               <div style={{ marginRight: '10px', width: '50px', height: '50px' }}>
                 <img
-                  src={item.person.photoUrl}
+                  src={item.photoUrl}
                   alt='User'
                   style={{ width: '100%', height: '100%', borderRadius: '50%' }}
                 />
               </div>
 
               <div>
-                <h3 style={{ margin: '0', fontSize: '1.2rem' }}>{item.person.name}</h3>
+                <h3 style={{ margin: '0', fontSize: '1.2rem' }}>{item.name}</h3>
                 <a
                   href='https://example.com/emrebezci'
                   style={{ textDecoration: 'none', color: 'inherit', fontSize: '0.9rem' }}
                 ></a>
               </div>
             </div>
-            {item.person.quotes.map((quote, index) => {
+            {item.quotes.map((quote, index) => {
               return (
                 <div key={index}>
                   <p style={{ lineHeight: '1.5', fontSize: '1rem', marginBottom: '20px' }}>
