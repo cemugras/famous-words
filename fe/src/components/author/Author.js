@@ -12,7 +12,7 @@ const Author = () => {
     const {name} = useParams();
     const authorName = urlDecryptor(name);
 
-    console.log(allDataList);
+  
     const data = allDataList.find(item => {
         const normalizedAuthorName = authorName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
         const normalizedPersonName = item.person.personName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
