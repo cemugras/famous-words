@@ -34,7 +34,6 @@ export const AppProvider = ({children}) => {
     const getDataById = async (id) => {
         try {
             const response = await axios.get(`https://famous-words.vercel.app/api/getRecordById?id=${id}`);
-            console.log("response.data.person", response.data.person);
             setAuthorData(response.data.person);
 
         } catch (error) {
@@ -45,7 +44,6 @@ export const AppProvider = ({children}) => {
     const getAllCategories = async () => {
         try {
             const response = await axios.get(`https://famous-words.vercel.app/api/getAllCategories`);
-            console.log("response.data", response.data);
             setAllCategories(response.data);
 
         } catch (error) {
@@ -61,7 +59,14 @@ export const AppProvider = ({children}) => {
     }, []);
 
     return <AppContext.Provider
-        value={{homePageData, authorData, allDataForSearch, getDataById, allCategories, setAuthorData}}>{children}</AppContext.Provider>;
+        value={{
+            homePageData,
+            authorData,
+            allDataForSearch,
+            getDataById,
+            allCategories,
+            setAuthorData
+        }}>{children}</AppContext.Provider>;
 };
 
 export default AppContext;
