@@ -134,7 +134,7 @@ async function getAllCategories() {
 
         const distinctCategories = [...new Set(response.Items.map(item => item.category.S).sort())];
 
-        return {result: 'Success', person: distinctCategories};
+        return {result: 'Success', categories: distinctCategories};
     } catch (error) {
         throw new Error(error.message);
     }
