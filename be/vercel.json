@@ -8,6 +8,8 @@
     { "src": "/api/getRecordByName", "dest": "api.js" },
     { "src": "/api/getRecordsByCategory", "dest": "api.js" },
     { "src": "/api/getAllCategories", "dest": "api.js" },
-    { "src": "/api/getAllNames", "dest": "api.js" }
+    { "src": "/api/getAllNames", "dest": "api.js" },
+    { "src": "/api/getHomePageRecords", "dest": "api.js" },
+    { "src": "/api/getAllNamesWithPics", "dest": "api.js" }
   ]
 }
