@@ -1,63 +1,54 @@
-import { createContext, useEffect, useState } from 'react';
+import {createContext, useEffect, useState} from 'react';
 import axios from 'axios';
 
 const AppContext = createContext();
 
-export const AppProvider = ({ children }) => {
-  // To storage names in an array
-  const [nameList, setNameList] = useState([]);
-  const bannerListTemp = [];
-  const allDataListTemp = [];
-  const [bannerList, setBannerList] = useState('');
-  const [allDataList , setAllDataList] = useState([]);
+export const AppProvider = ({children}) => {
+    // To storage names in an array
+    const [homePageData, setHomePageData] = useState('');
+    const [allDataForSearch, setAllDataForSearch] = useState('');
+    const [authorData, setAuthorData] = useState('');
 
-  // To get names from API
-  const fetchNames = async () => {
-    try {
-      const response = await axios.get('https://famous-words.vercel.app/api/getAllNames');
-      setNameList(response.data.people);
-      
-      await fetchAllData(response.data.people.length);
-    } catch (error) {
-      console.error('Cannot fetch the names:', error);
-    }
-  };
+    // To get names from API
+    const fetchHomePageData = async () => {
+        try {
+            const response = await axios.get('https://famous-words.vercel.app/api/getHomePageRecords');
+            setHomePageData(response.data.records);
 
-  const fetchAllData = async (length) => {
-    try {
-      let id = 1
-      while (id<length+1){
-        const response = await axios.get(`https://famous-words.vercel.app/api/getRecordById?id=${id}`);
-        allDataListTemp.push(response.data);
-        id++
-      }
-    }
-    catch (error){
-      console.error('Cannot fetch the names:', error);
-    }
-  }
-
-  const getRecordById = async (id) => {
-    try {
-      const response = await axios.get(`https://famous-words.vercel.app/api/getRecordById?id=${id}`);
-      bannerListTemp.push(response.data);
-    } catch (error) {
-      console.error('Cannot fetch the names:', error);
-    }
-  };
-
-  // To send request to API when the page is rendered
-  useEffect(() => {
-    const fetchData = async () => {
-      await fetchNames();
-      await Promise.all([getRecordById(1), getRecordById(2), getRecordById(3)]);
-      setBannerList([...bannerListTemp]);
-      setAllDataList([...allDataListTemp]);
+        } catch (error) {
+            console.error('Cannot fetch the names:', error);
+        }
     };
-    fetchData();
-  }, []);
 
-  return <AppContext.Provider value={{ nameList, bannerList, allDataList }}>{children}</AppContext.Provider>;
+    const fetchAllDataForSearch = async () => {
+        try {
+            const response = await axios.get('https://famous-words.vercel.app/api/getAllNamesWithPics');
+            setAllDataForSearch(response.data.people);
+
+        } catch (error) {
+            console.error('Cannot fetch the names:', error);
+        }
+    };
+
+    const getDataById = async (id) => {
+        try {
+            const response = await axios.get(`https://famous-words.vercel.app/api/getRecordById?id=${id}`);
+            console.log("response.data.person", response.data.person);
+            setAuthorData(response.data.person);
+
+        } catch (error) {
+            console.error('Cannot fetch the names:', error);
+        }
+    };
+
+    // To send request to API when the page is rendered
+    useEffect(() => {
+        fetchHomePageData();
+        fetchAllDataForSearch();
+    }, []);
+
+    return <AppContext.Provider
+        value={{homePageData, authorData, allDataForSearch, getDataById}}>{children}</AppContext.Provider>;
 };
 
 export default AppContext;
