@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import AppContext from '../context/AppContext';
-
+import { useNavigate } from 'react-router-dom';
 const AlphabetNav = ({ activeLetter, onLetterClick }) => {
   return (
     <nav className='AlphabetNav'>
@@ -22,11 +22,13 @@ const AlphabetNav = ({ activeLetter, onLetterClick }) => {
 };
 
 const Authors = () => {
-  const { allDataForSearch } = useContext(AppContext); 
+  const { allDataForSearch } = useContext(AppContext);
   const [activeLetter, setActiveLetter] = useState(null);
+  const navigate = useNavigate();
+  const {urlEncryptor} = require('../../utils/endpointUtils');
 
   if (!allDataForSearch || allDataForSearch.length === 0) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>;
   }
 
   const handleLetterClick = (letter) => {
@@ -37,7 +39,10 @@ const Authors = () => {
     }
   };
 
-  // if activeLetter does not exists show all people, else filter
+  const handleNavigate = (id, person) => {
+    navigate('/' + urlEncryptor(person), {state: {id:id}});
+  };
+
   const displayedContacts = !activeLetter
     ? allDataForSearch.sort((a, b) => a.person.localeCompare(b.person))
     : allDataForSearch
@@ -48,7 +53,6 @@ const Authors = () => {
     <>
       <AlphabetNav activeLetter={activeLetter} onLetterClick={handleLetterClick} />
 
-      {/* If there is no data of filtered list, show message */}
       {displayedContacts.length === 0 ? (
         <div>No contacts found for the selected letter.</div>
       ) : (
@@ -56,7 +60,11 @@ const Authors = () => {
           {displayedContacts.map((contact, index) => (
             <section className='Contact' key={index}>
               <img className='Contact-avatar' src={contact.photoUrl} alt={`${contact.person}'s avatar`} />
-              <h5 className='Contact-name'>{contact.person}</h5>
+              <a
+                onClick={() => handleNavigate(contact.id, contact.person)} 
+              >
+                <h5 className='Contact-name'>{contact.person}</h5>
+              </a>
             </section>
           ))}
         </div>

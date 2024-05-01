@@ -461,7 +461,6 @@ button:hover {
 }
 
 /* AUTHORS PAGE */
-/* AUTHORS PAGE */
 .AlphabetNav {
   position: sticky;
   top: 0;
@@ -507,6 +506,10 @@ button:hover {
 }
 .ContactList .Contact {
   margin-bottom: 1.5rem;
+}
+
+.ContactList a {
+  cursor: pointer;
 }
 .Contact-avatar {
   margin: 0 1em 0 0;
