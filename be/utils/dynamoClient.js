@@ -168,7 +168,6 @@ async function getHomePageRecords() {
     try {
         const scanItemsCommand = new ScanCommand({
             TableName: tableName,
-            Limit: 10,
             FilterExpression: 'id BETWEEN :startId AND :endId',
             ExpressionAttributeValues: {
                 ':startId': {N: '1'},
