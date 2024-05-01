@@ -8,7 +8,9 @@ const {
     getRecordByName,
     getRecordsByCategory,
     getAllCategories,
-    getAllNames
+    getAllNames,
+    getHomePageRecords,
+    getAllNamesWithPics
 } = require('./utils/dynamoClient.js');
 const {checkData} = require('./utils/validateData.js');
 
@@ -89,6 +91,32 @@ app.get('/api/getAllNames', async (req, res) => {
 
     } catch (error) {
         console.error('[getAllNames] Error:', error.message);
+        res.status(500).json({result: 'Error', resultDesc: error.message});
+    }
+})
+
+app.get('/api/getHomePageRecords', async (req, res) => {
+    console.log("[getHomePageRecords] STARTED");
+    try {
+        const result = await getHomePageRecords();
+
+        res.status(200).json(result);
+
+    } catch (error) {
+        console.error('[getHomePageRecords] Error:', error.message);
+        res.status(500).json({result: 'Error', resultDesc: error.message});
+    }
+})
+
+app.get('/api/getAllNamesWithPics', async (req, res) => {
+    console.log("[getAllNamesWithPics] STARTED");
+    try {
+        const result = await getAllNamesWithPics();
+
+        res.status(200).json(result);
+
+    } catch (error) {
+        console.error('[getAllNamesWithPics] Error:', error.message);
         res.status(500).json({result: 'Error', resultDesc: error.message});
     }
 })

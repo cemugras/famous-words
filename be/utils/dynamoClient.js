@@ -154,7 +154,7 @@ async function getAllNames() {
         }
 
         const sortedDistinctPeople = response.Items.map(item => ({
-            id: parseInt(item.id.N), // id'yi sayısal değere dönüştürüyoruz
+            id: parseInt(item.id.N),
             person: item.personName.S
         })).sort((a, b) => a.id - b.id);
 
@@ -164,4 +164,82 @@ async function getAllNames() {
     }
 }
 
-module.exports = {getRecordById, getRecordByName, getRecordsByCategory, getAllCategories, getAllNames};
+async function getHomePageRecords() {
+    try {
+        const scanItemsCommand = new ScanCommand({
+            TableName: tableName,
+            Limit: 10,
+            FilterExpression: 'id BETWEEN :startId AND :endId',
+            ExpressionAttributeValues: {
+                ':startId': {N: '1'},
+                ':endId': {N: '10'}
+            }
+        });
+        const response = await dynamoDBClient.send(scanItemsCommand);
+
+        if (response.Count === 0) {
+            return {result: 'Warning', resultDesc: 'No data found.'};
+        }
+
+        const queryItems = response.Items;
+
+        queryItems.sort((a, b) => {
+            return parseInt(a.id.N) - parseInt(b.id.N);
+        });
+
+        const records = queryItems.map(item => {
+            return Object.fromEntries(
+                Object.entries(item).map(([key, value]) => {
+                    if ('S' in value) {
+                        return [key, value['S']];
+                    } else if ('N' in value) {
+                        return [key, value['N']];
+                    } else if ('L' in value) {
+                        return [key, value['L'].map(item => item['S'])];
+                    } else {
+                        return [key, value];
+                    }
+                })
+            );
+        });
+
+        return {result: 'Success', records: records};
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+async function getAllNamesWithPics() {
+    try {
+
+        const scanCommand = new ScanCommand({
+            TableName: tableName,
+            ProjectionExpression: 'id,personName,photoUrl',
+        });
+        const response = await dynamoDBClient.send(scanCommand);
+
+        if (response.Count === 0) {
+            return {result: 'Warning', resultDesc: 'No data found.'};
+        }
+
+        const sortedDistinctPeople = response.Items.map(item => ({
+            id: parseInt(item.id.N),
+            person: item.personName.S,
+            photoUrl: item.photoUrl.S
+        })).sort((a, b) => a.id - b.id);
+
+        return {result: 'Success', people: sortedDistinctPeople};
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+module.exports = {
+    getRecordById,
+    getRecordByName,
+    getRecordsByCategory,
+    getAllCategories,
+    getAllNames,
+    getHomePageRecords,
+    getAllNamesWithPics
+};
