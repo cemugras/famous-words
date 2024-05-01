@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useContext } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../context/AppContext'; // AppContext'ten veri alıyoruz
 
 const Topics = () => {
@@ -8,6 +8,8 @@ const Topics = () => {
 
   const topicsWithDividers = [];
   let lastChar = '-';
+
+  const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase(); // İlk harfi büyük yapma fonksiyonu
 
   categories.forEach((category, index) => {
     const curChar = category.charAt(0).toLowerCase();
@@ -26,7 +28,7 @@ const Topics = () => {
 
     topicsWithDividers.push(
       <li key={category}>
-        <a href={`#${curChar}`}>{category}</a>
+        <a href={`#${curChar}`}>{capitalize(category)}</a> {/* Başlığı büyük harf yap */}
       </li>
     );
   });
@@ -34,7 +36,7 @@ const Topics = () => {
   return (
     <div>
       <div id='scrolling'>
-        <ul className='list'>{topicsWithDividers}</ul>
+        <ul className='list'>{topicsWithDividers}</ul> {/* Listelenen öğeler */}
       </div>
     </div>
   );
