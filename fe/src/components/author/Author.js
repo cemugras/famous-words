@@ -38,7 +38,7 @@ const Author = () => {
                             <div className='animated-border-quote'>
                                 <blockquote>
                                     <p>{quote}</p>
-                                    <cite>{authorData.name}</cite>
+                                    <cite>{authorData.personName}</cite>
                                     <div className='social'>
                                         <SocialShare/>
                                         <LikeButton/>
