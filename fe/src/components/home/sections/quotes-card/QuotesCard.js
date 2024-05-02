@@ -23,7 +23,7 @@ const QuotesCard = () => {
               </div>
 
               <div>
-                <h3 style={{ margin: '0', fontSize: '1.2rem' }}>{item.name}</h3>
+                <h3 style={{ margin: '0', fontSize: '1.2rem' }}>{item.personName}</h3>
                 <a
                   href='https://example.com/emrebezci'
                   style={{ textDecoration: 'none', color: 'inherit', fontSize: '0.9rem' }}

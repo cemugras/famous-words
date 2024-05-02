@@ -7,9 +7,10 @@ import parse from 'autosuggest-highlight/parse';
 import match from 'autosuggest-highlight/match';
 import {useNavigate} from 'react-router-dom';
 
-const {urlEncryptor} = require('../../utils/endpointUtils');
+
 
 const SearchBox = () => {
+    const {urlEncryptor} = require('../../utils/endpointUtils');
     const {allDataForSearch} = useContext(AppContext);
     const navigate = useNavigate();
 

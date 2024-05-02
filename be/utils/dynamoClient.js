@@ -134,7 +134,7 @@ async function getAllCategories() {
 
         const distinctCategories = [...new Set(response.Items.map(item => item.category.S).sort())];
 
-        return {result: 'Success', person: distinctCategories};
+        return {result: 'Success', categories: distinctCategories};
     } catch (error) {
         throw new Error(error.message);
     }
@@ -168,7 +168,6 @@ async function getHomePageRecords() {
     try {
         const scanItemsCommand = new ScanCommand({
             TableName: tableName,
-            Limit: 10,
             FilterExpression: 'id BETWEEN :startId AND :endId',
             ExpressionAttributeValues: {
                 ':startId': {N: '1'},
