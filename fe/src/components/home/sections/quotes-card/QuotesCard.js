@@ -1,16 +1,14 @@
-import React, { useContext } from 'react';
-import AppContext from '../../../context/AppContext';
+import React from 'react';
 import SocialShare from '../social-share/SocialShare';
 import LikeButton from '../like-button/LikeButton';
-const QuotesCard = () => {
-  const { homePageData } = useContext(AppContext);
-  if (!homePageData) {
+const QuotesCard = ({data}) => {
+  if (!data) {
     return <div>Loading...</div>;
   }
 
   return (
     <div className='cards'>
-      {homePageData.map((item, index) => (
+      {data.map((item, index) => (
         <div key={index}>
           <div className='card'>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '12px' }}>
