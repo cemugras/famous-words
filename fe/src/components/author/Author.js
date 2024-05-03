@@ -40,9 +40,8 @@ const Author = () => {
                 <p>{quote}</p>
                 <cite>{authorData.personName}</cite>
                 <div className='social'>
-                  {/* Alıntı için dinamik paylaşım düğmeleri */}
                   <SocialShare quote={quote} authorName={authorData.personName} />
-                  <LikeButton /> {/* Beğeni butonu */}
+                  <LikeButton />
                 </div>
               </blockquote>
             </div>
