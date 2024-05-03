@@ -7,9 +7,10 @@ import LikeButton from '../../components/home/sections/like-button/LikeButton';
 const Author = () => {
   const location = useLocation();
   const id = location.state?.id;
-  const { getDataById, authorData } = useContext(AppContext);
+  const { getDataById, authorData, setAuthorData } = useContext(AppContext);
 
   useEffect(() => {
+    setAuthorData(null);
     getDataById(id);
   }, [id]);
 
@@ -28,7 +29,7 @@ const Author = () => {
           </div>
         </div>
       </div>
-      
+
       <div className='author-quotes'>
         <div className='quotes-header'>
           <h1>Quotes</h1>
