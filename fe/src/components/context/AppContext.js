@@ -8,6 +8,7 @@ export const AppProvider = ({children}) => {
     const [homePageData, setHomePageData] = useState('');
     const [allDataForSearch, setAllDataForSearch] = useState('');
     const [authorData, setAuthorData] = useState('');
+    const [topicData, setTopicData] = useState('');
     const [allCategories, setAllCategories] = useState('');
 
     // To get names from API
@@ -51,6 +52,16 @@ export const AppProvider = ({children}) => {
         }
     }
 
+    const getDataByTopic = async (topic) => {
+        try {
+            const response = await axios.get(`https://famous-words.vercel.app/api/getRecordsByCategory?category=${topic}`);
+            setTopicData(response.data.people);
+
+        } catch (error) {
+            console.error('Cannot fetch the names:', error);
+        }
+    };
+
     // To send request to API when the page is rendered
     useEffect(() => {
         fetchHomePageData();
@@ -64,8 +75,11 @@ export const AppProvider = ({children}) => {
             authorData,
             allDataForSearch,
             getDataById,
+            setAuthorData,
             allCategories,
-            setAuthorData
+            getDataByTopic,
+            topicData,
+            setTopicData
         }}>{children}</AppContext.Provider>;
 };
 

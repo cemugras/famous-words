@@ -605,6 +605,7 @@ ul.list {
   color: darkgray;
   font-size: 1.3rem;
   font-weight: 500;
+  cursor: pointer;
 }
 .list .divider {
   font-size: 20px;
