@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 import SocialShare from '../../components/home/sections/social-share/SocialShare';
@@ -8,11 +8,29 @@ const Author = () => {
   const location = useLocation();
   const id = location.state?.id;
   const { getDataById, authorData, setAuthorData } = useContext(AppContext);
+  const [truncatedBiography, setTruncatedBiography] = useState('');
+  const [showFullBiography, setShowFullBiography] = useState(false);
 
   useEffect(() => {
     setAuthorData(null);
     getDataById(id);
+    // Listeye tıkladığında showFullBiography durumunu sıfırla
+    setShowFullBiography(false);
   }, [id]);
+
+  useEffect(() => {
+    if (authorData && authorData.biography) {
+      const maxLength = 500; // Max karakter sayısı
+      const truncatedText = authorData.biography.length > maxLength
+        ? authorData.biography.substring(0, maxLength) + "..."
+        : authorData.biography;
+      setTruncatedBiography(truncatedText);
+    }
+  }, [authorData]);
+
+  const handleShowFullBiography = () => {
+    setShowFullBiography(true);
+  };
 
   if (!authorData) {
     return <div>Loading...</div>; // Veri yüklenirken mesaj
@@ -25,7 +43,12 @@ const Author = () => {
         <div className='author-info'>
           <img src={authorData.photoUrl} alt={authorData.personName} />
           <div className='info-text'>
-            <p>{authorData.biography}</p>
+            <p>
+              {showFullBiography ? authorData.biography : truncatedBiography}
+              {!showFullBiography && (
+                <button onClick={handleShowFullBiography}>See More</button>
+              )}
+            </p>
           </div>
         </div>
       </div>

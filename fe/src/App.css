@@ -360,12 +360,17 @@ button:hover {
 
 .author-info img,
 .info-text {
+  border: 1px solid black;
   height: 100%;
   width: 50%;
 }
 
 .author-info p {
   line-height: 2rem;
+  max-height: 100%;
+    /* Quotes div'inin maksimum yüksekliği */
+    overflow-y: auto;
+    /* Dikey kaydırma çubuğu ekler */
 }
 
 .info-text {
