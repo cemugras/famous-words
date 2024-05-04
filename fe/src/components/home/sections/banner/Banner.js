@@ -34,7 +34,7 @@ const Banner = () => {
             onClick={() => handleNavigate(item.id, item.personName)}
             key={index}
             className='section'
-            style={{ backgroundImage: `url(${item.photoUrl})` }}
+            style={{ backgroundImage: `url(${item.bannerUrl})` }}
           >
             <div className='content'>
               <h1>{item.personName}</h1>
