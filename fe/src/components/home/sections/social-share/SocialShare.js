@@ -5,8 +5,7 @@ import { FacebookIcon, TwitterIcon, WhatsappIcon } from 'react-share';
 const SocialShare = ({ quote, authorName }) => {
   const currentUrl = window.location.href; // URL of current page
   const shareText = `${quote} - ${authorName}\n`; // Text to share
-  console.log(currentUrl);
-  console.log(shareText);
+  
 
   return (
     <div className='social-share'>
