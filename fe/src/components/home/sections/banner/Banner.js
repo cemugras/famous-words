@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import AppContext from '../../../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,9 +6,30 @@ const Banner = () => {
   const { homePageData } = useContext(AppContext);
   const { urlEncryptor } = require('../../../../utils/endpointUtils');
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
 
-  if (!homePageData || homePageData.length === 0) {
-    return <div>Loading...</div>; // Veri yüklenirken mesaj
+  useEffect(() => {
+    if (homePageData && homePageData.length > 0) {
+      setLoading(false);
+    }
+  }, [homePageData]);
+
+  if (loading) {
+    return (
+      <div className="banner">
+        <div className="container mx-auto p-4">
+          <div className="grid grid-cols-3 gap-4">
+            {/* Placeholder for Skeleton */}
+            {[1, 2, 3].map((index) => (
+              <div key={index} className="bg-gray-200 rounded-lg p-4 border border-gray-300 animate-pulse">
+                <div className="h-40 bg-gray-400 rounded"></div>
+                <div className="mt-2 h-4 bg-gray-400 rounded"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
   }
 
   // Function to select random items

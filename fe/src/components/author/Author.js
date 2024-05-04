@@ -65,7 +65,6 @@ const Author = () => {
                 <cite>{authorData.personName}</cite>
                 <div className='social'>
                   <SocialShare quote={quote} authorName={authorData.personName} />
-                  <LikeButton />
                 </div>
               </blockquote>
             </div>

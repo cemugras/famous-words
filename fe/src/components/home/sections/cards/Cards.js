@@ -7,7 +7,6 @@ const Cards = () => {
     return (
         <div className='cards-container flex'>
             <QuotesCard data = {homePageData}/>
-
         </div>
     );
 };
