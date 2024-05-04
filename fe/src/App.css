@@ -80,6 +80,7 @@ body {
 .card {
   display: flex;
   flex-direction: column;
+  position: relative;
   gap: 0.5rem 0;
   width: 20rem;
   min-height: 380px;
@@ -213,7 +214,6 @@ button {
   color: #333;
   background: #fff;
   margin-bottom: 50px;
-  box-shadow: 0 3px 20px 0 #0000003b;
 }
 button:hover {
   cursor: pointer;
@@ -329,10 +329,12 @@ button:hover {
 }
 
 .social {
+  position: absolute; /* Üst divin içinde konumlandırmak için */
+  bottom: 20px; /* Üst divin altından 20 piksel yukarıda */
+  right: 20px; /* Üst divin sağından 20 piksel içerde */
   display: flex;
-  align-items: center;
-  height: 50px;
-  padding: 2rem 0;
+  flex-direction: column;
+  gap: 10px; /* Her bir paylaş butonu arasında 10 piksel boşluk */
 }
 
 /* AUTHOR PAGE */
@@ -449,6 +451,7 @@ button:hover {
 }
 
 .author-quotes {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -634,3 +637,4 @@ header {
 #scrolling {
   padding-top: 44px;
 }
+
