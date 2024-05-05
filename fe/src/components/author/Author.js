@@ -59,8 +59,8 @@ const Author = () => {
         </div>
         <div className='quote-card'>
           {authorData.quotes.map((quote, index) => (
-            <div className='animated-border-quote' key={index}>
-              <blockquote>
+            <div className='animated-border-quote author-quote-card' key={index}>
+              <blockquote >
                 <p>{quote}</p>
                 <cite>{authorData.personName}</cite>
                 <div className='social'>
