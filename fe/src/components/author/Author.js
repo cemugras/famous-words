@@ -33,7 +33,7 @@ const Author = () => {
   };
 
   if (!authorData) {
-    return <div>Loading...</div>; // Veri yüklenirken mesaj
+    return <div></div>; 
   }
 
   return (

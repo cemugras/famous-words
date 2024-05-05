@@ -2,10 +2,25 @@ import React, { useContext } from 'react';
 import AppContext from '../../../context/AppContext';
 import SocialShare from '../social-share/SocialShare';
 import LikeButton from '../like-button/LikeButton';
+import Skeleton from './skeletonCard';
+
 const QuotesCard = () => {
   const { homePageData } = useContext(AppContext);
   if (!homePageData) {
-    return <div>Loading...</div>;
+    return <div className="author-quotes">
+       <div className='quote-card'>
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        </div>
+      </div>
   }
 
   return (

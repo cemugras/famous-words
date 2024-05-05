@@ -14,7 +14,7 @@ const Topic = () => {
     }, [category]);
 
     if (!topicData) {
-        return <div>Loading...</div>;
+        return <div></div>;
     }
 
     console.log(topicData);
