@@ -69,26 +69,9 @@ body {
   width: 100%;
 }
 
-.cards {
-  width: 100%;
+.card-header {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem 2rem;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  gap: 0.5rem 0;
-  width: 20rem;
-  min-height: 380px;
-  max-height: 400px;
-  border-radius: 8px;
-  padding: 16px;
-  position: relative;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  align-items: center;
 }
 
 /* Social cards */
@@ -333,7 +316,7 @@ button:hover {
   flex-direction: column;
 }
 
-.social-share{
+.social-share {
   display: flex;
   justify-content: flex-end;
 }
@@ -370,9 +353,9 @@ button:hover {
 .author-info p {
   line-height: 2rem;
   max-height: 100%;
-    /* Quotes div'inin maksimum yüksekliği */
-    overflow-y: auto;
-    /* Dikey kaydırma çubuğu ekler */
+  /* Quotes div'inin maksimum yüksekliği */
+  overflow-y: auto;
+  /* Dikey kaydırma çubuğu ekler */
 }
 
 .info-text {
@@ -639,4 +622,3 @@ header {
 #scrolling {
   padding-top: 44px;
 }
-
