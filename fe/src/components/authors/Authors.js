@@ -1,25 +1,8 @@
 import React, { useContext, useState } from 'react';
 import AppContext from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
-const AlphabetNav = ({ activeLetter, onLetterClick }) => {
-  return (
-    <nav className='AlphabetNav'>
-      {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((letter) => (
-        <a
-          href='#'
-          key={letter}
-          onClick={(e) => {
-            e.preventDefault();
-            onLetterClick(letter);
-          }}
-          className={activeLetter === letter ? 'active' : ''}
-        >
-          {letter}
-        </a>
-      ))}
-    </nav>
-  );
-};
+import AlphabetNav from './alphabet-nav/AlphabetNav';
+
 
 const Authors = () => {
   const { allDataForSearch } = useContext(AppContext);

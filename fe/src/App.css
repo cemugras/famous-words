@@ -329,14 +329,14 @@ button:hover {
 }
 
 .social {
-  position: absolute; /* Üst divin içinde konumlandırmak için */
-  bottom: 20px; /* Üst divin altından 20 piksel yukarıda */
-  right: 20px; /* Üst divin sağından 20 piksel içerde */
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Her bir paylaş butonu arasında 10 piksel boşluk */
 }
 
+.social-share{
+  display: flex;
+  justify-content: flex-end;
+}
 /* AUTHOR PAGE */
 .author-header {
   margin: 0 auto;
@@ -398,6 +398,9 @@ button:hover {
   margin: 0;
   padding: 1em;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem 0;
 }
 .animated-border-quote blockquote:before {
   animation: clockwise 30s infinite linear;
@@ -430,7 +433,6 @@ button:hover {
   content: '- ';
 }
 .animated-border-quote blockquote > * {
-  position: relative;
   z-index: 1;
 }
 @keyframes clockwise {
