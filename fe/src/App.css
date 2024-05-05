@@ -69,26 +69,9 @@ body {
   width: 100%;
 }
 
-.cards {
-  width: 100%;
+.card-header {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem 2rem;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  gap: 0.5rem 0;
-  width: 20rem;
-  min-height: 380px;
-  max-height: 400px;
-  border-radius: 8px;
-  padding: 16px;
-  position: relative;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  align-items: center;
 }
 
 /* Social cards */
@@ -333,7 +316,7 @@ button:hover {
   flex-direction: column;
 }
 
-.social-share{
+.social-share {
   display: flex;
   justify-content: flex-end;
 }
@@ -370,14 +353,12 @@ button:hover {
 .author-info p {
   line-height: 2rem;
   max-height: 100%;
-    /* Quotes div'inin maksimum yüksekliği */
-    overflow-y: auto;
-    /* Dikey kaydırma çubuğu ekler */
+  /* Quotes div'inin maksimum yüksekliği */
+  overflow-y: auto;
+  /* Dikey kaydırma çubuğu ekler */
 }
 
 .info-text {
-  height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -388,9 +369,11 @@ button:hover {
 .animated-border-quote {
   display: flex;
   margin: 1em;
-  max-width: 20em;
+  width: 300px;
   overflow: hidden;
+  height: 250px;
 }
+
 .animated-border-quote blockquote {
   background-color: #fff;
   border: solid 2px #757575;
@@ -401,6 +384,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 1rem 0;
+  height: 100%;
+  width: 100%;
 }
 .animated-border-quote blockquote:before {
   animation: clockwise 30s infinite linear;
@@ -451,6 +436,9 @@ button:hover {
     transform: rotate(-360deg);
   }
 }
+.author-quote-card {
+  height: 200px;
+}
 
 .author-quotes {
   position: relative;
@@ -461,7 +449,9 @@ button:hover {
 
 .quote-card {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .page-container {
@@ -535,29 +525,7 @@ button:hover {
   font-weight: 500;
   color: darkgray;
 }
-@media (min-width: 400px) {
-  .AlphabetNav {
-    top: 2vh;
-    right: 0;
-    height: 90vh;
-    width: 9em;
-  }
-  .AlphabetNav a {
-    width: calc(100% * 1 / 3 - 0.3em);
-  }
-  .ContactList {
-    padding-top: 2rem;
-  }
-}
-@media (min-width: 400px) and (min-height: 600px) {
-  .AlphabetNav {
-    width: 6em;
-  }
-  .AlphabetNav a {
-    width: calc(100% * 1 / 2 - 0.5em);
-    margin: 0.25em;
-  }
-}
+
 @media (min-width: 800px) {
   .AlphabetNav {
     top: 0;
@@ -640,3 +608,90 @@ header {
   padding-top: 44px;
 }
 
+/* RESPONSIVE CSS */
+/* MOBILE SCREEN */
+@media screen and (max-width: 767px) {
+  .banner {
+    display: none;
+  }
+
+  .navbar-logo {
+    width: 150px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: 30vh;
+    gap: 0;
+  }
+
+  .navbar nav a {
+    font-size: 14px;
+  }
+
+  .cards-container {
+    padding: 0;
+  }
+
+  .ContactList {
+    padding: 2rem 2rem 0;
+  }
+
+  #scrolling {
+    padding: 0;
+  }
+
+  .author-info {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .info-text {
+    height: 70%;
+    width: 100%;
+  }
+
+  .page-container {
+    gap: 13rem 0;
+  }
+
+  .author-info img {
+    width: 100%;
+  }
+}
+
+/* TABLET SCREEN */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .navbar-logo {
+    width: 150px;
+  }
+
+  .navbar nav a {
+    font-size: 14px;
+  }
+
+  .navbar {
+    height: 8vh;
+  }
+
+  .navbar nav {
+    padding: 0 1rem;
+  }
+
+  .ContactList {
+    padding: 2rem 2rem 0;
+  }
+
+  #scrolling {
+    padding: 0;
+  }
+
+  .author-info {
+    width: 100%;
+  }
+
+  .author-quote-card {
+    height: 200px !important;
+  }
+}
