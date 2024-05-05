@@ -11,7 +11,9 @@ body {
   padding: 0 2rem;
   background-color: #fafafa;
 }
-
+html {
+  overflow-y: scroll;
+}
 /* NAVBAR */
 .navbar {
   height: 5vh;
@@ -179,6 +181,7 @@ body {
 
 .section .content {
   z-index: 2;
+  text-align: center;
 }
 
 .section:hover {
@@ -319,6 +322,7 @@ button:hover {
 .social-share {
   display: flex;
   justify-content: flex-end;
+  gap: 0 0.5rem;
 }
 /* AUTHOR PAGE */
 .author-header {
