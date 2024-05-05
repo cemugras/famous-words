@@ -1,7 +1,7 @@
 import React from 'react';
 import SocialShare from '../social-share/SocialShare';
 import LikeButton from '../like-button/LikeButton';
-import Skeleton from './skeletonCard'
+import Skeleton from './skeletonCard';
 
 const QuotesCard = ({data}) => {
   if (!data) {
