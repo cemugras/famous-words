@@ -28,7 +28,7 @@ const Authors = () => {
   const {urlEncryptor} = require('../../utils/endpointUtils');
 
   if (!allDataForSearch || allDataForSearch.length === 0) {
-    return <div>Loading...</div>;
+    return <AlphabetNav />;
   }
 
   const handleLetterClick = (letter) => {
