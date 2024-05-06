@@ -17,8 +17,6 @@ const Topic = () => {
         return <div></div>;
     }
 
-    console.log(topicData);
-
     return (
         <div className='cards-container flex'>
             <QuotesCard data = {topicData}/>

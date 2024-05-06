@@ -488,6 +488,7 @@ button:hover {
   font-weight: 500;
   text-decoration: none;
   color: darkgray;
+  width: 8vw;
 }
 .AlphabetNav a:hover {
   background: #ddd;
@@ -510,11 +511,8 @@ button:hover {
   width: 90%;
 }
 .ContactList .Contact {
-  margin-bottom: 1.5rem;
-}
-
-.ContactList a {
   cursor: pointer;
+  margin-bottom: 1.5rem;
 }
 .Contact-avatar {
   margin: 0 1em 0 0;
