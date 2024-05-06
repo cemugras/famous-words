@@ -41,11 +41,9 @@ const Authors = () => {
       ) : (
         <div className='ContactList'>
           {displayedContacts.map((contact, index) => (
-            <section className='Contact' key={index}>
+            <section className='Contact' key={index} onClick={() => handleNavigate(contact.id, contact.person)}>
               <img className='Contact-avatar' src={contact.photoUrl} alt={`${contact.person}'s avatar`} />
-              <a
-                onClick={() => handleNavigate(contact.id, contact.person)} 
-              >
+              <a>
                 <h5 className='Contact-name'>{contact.person}</h5>
               </a>
             </section>
