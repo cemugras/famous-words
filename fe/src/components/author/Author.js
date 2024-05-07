@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 import SocialShare from '../../components/home/sections/social-share/SocialShare';
-import LikeButton from '../../components/home/sections/like-button/LikeButton';
+import { Helmet } from 'react-helmet';
 
 const Author = () => {
   const location = useLocation();
@@ -38,6 +38,10 @@ const Author = () => {
 
   return (
     <div className='page-container'>
+      <Helmet>
+        <title>{authorData.personName} Quotes and Life</title>
+        <meta  name='description' content='Author page'/>
+      </Helmet>
       <div className='author-header'>
         <h1>{authorData.personName}</h1>
         <div className='author-info'>
