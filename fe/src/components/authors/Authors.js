@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import AppContext from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import AlphabetNav from './alphabet-nav/AlphabetNav';
+import { Helmet } from 'react-helmet';
 
 
 const Authors = () => {
@@ -34,6 +35,10 @@ const Authors = () => {
 
   return (
     <>
+    <Helmet>
+      <title>Authors</title>
+      <meta name='description' content='Authors page'/>
+    </Helmet>
       <AlphabetNav activeLetter={activeLetter} onLetterClick={handleLetterClick} />
 
       {displayedContacts.length === 0 ? (
