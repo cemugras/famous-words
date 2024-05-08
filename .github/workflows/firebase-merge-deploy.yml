@@ -28,6 +28,6 @@ jobs:
       - name: Firebase Hosting Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: ${{ secrets.$FIREBASE_TOKEN }}
+          repoToken: ${{ secrets.FIREBASE_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_QUOTESCYCLOPEDIA }}
           projectId: quotescyclopedia
