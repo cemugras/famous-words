@@ -32,7 +32,6 @@ const Banner = () => {
     );
   }
 
-  // Function to select random items
   const getRandomItems = (array, numberOfItems) => {
     // Diziyi kopyalayın ve karıştırın
     const shuffledArray = [...array].sort(() => Math.random() - 0.5);
