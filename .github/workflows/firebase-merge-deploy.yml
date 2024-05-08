@@ -23,12 +23,16 @@ jobs:
         run: firebase login --no-interactive --ci
 
       - name: Build React App
-        run: npm install && npm run build
+        run: |
+          cd fe
+          npm install
+          npm run build
 
       - name: Deploy to Firebase
         run: firebase deploy --only hosting
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Firebase Hosting Deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_QUOTESCYCLOPEDIA }}
