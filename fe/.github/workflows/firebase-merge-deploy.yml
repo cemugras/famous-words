@@ -9,8 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v1
@@ -28,3 +27,9 @@ jobs:
 
       - name: Deploy to Firebase
         run: firebase deploy --only hosting
+
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_QUOTESCYCLOPEDIA }}
+          projectId: quotescyclopedia
