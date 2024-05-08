@@ -13,7 +13,6 @@ const SearchBox = () => {
     const navigate = useNavigate();
 
     if (!allDataForSearch) {
-        // If data not arrived show empty input
         return (
             <TextField
                 label='Search'
