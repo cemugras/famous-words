@@ -14,7 +14,7 @@ export const AppProvider = ({children}) => {
     // To get names from API
     const fetchHomePageData = async () => {
         try {
-            const response = await axios.get('https://famous-words.vercel.app/api/getHomePageRecords');
+            const response = await axios.get('https://quotescyclopedia-api.vercel.app/api/getHomePageRecords');
             setHomePageData(response.data.records);
 
         } catch (error) {
@@ -24,7 +24,7 @@ export const AppProvider = ({children}) => {
 
     const fetchAllDataForSearch = async () => {
         try {
-            const response = await axios.get('https://famous-words.vercel.app/api/getAllNamesWithPics');
+            const response = await axios.get('https://quotescyclopedia-api.vercel.app/api/getAllNamesWithPics');
             setAllDataForSearch(response.data.people);
 
         } catch (error) {
@@ -34,7 +34,7 @@ export const AppProvider = ({children}) => {
 
     const getDataById = async (id) => {
         try {
-            const response = await axios.get(`https://famous-words.vercel.app/api/getRecordById?id=${id}`);
+            const response = await axios.get(`https://quotescyclopedia-api.vercel.app/api/getRecordById?id=${id}`);
             setAuthorData(response.data.person);
 
         } catch (error) {
@@ -44,7 +44,7 @@ export const AppProvider = ({children}) => {
 
     const getAllCategories = async () => {
         try {
-            const response = await axios.get(`https://famous-words.vercel.app/api/getAllCategories`);
+            const response = await axios.get(`https://quotescyclopedia-api.vercel.app/api/getAllCategories`);
             setAllCategories(response.data);
 
         } catch (error) {
@@ -54,7 +54,7 @@ export const AppProvider = ({children}) => {
 
     const getDataByTopic = async (topic) => {
         try {
-            const response = await axios.get(`https://famous-words.vercel.app/api/getRecordsByCategory?category=${topic}`);
+            const response = await axios.get(`https://quotescyclopedia-api.vercel.app/getRecordsByCategory?category=${topic}`);
             setTopicData(response.data.people);
 
         } catch (error) {
