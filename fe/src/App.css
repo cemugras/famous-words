@@ -199,9 +199,6 @@ button {
   border-radius: 50px;
   color: #333;
   background: #fff;
-  margin-bottom: 50px;
-}
-button:hover {
   cursor: pointer;
 }
 
@@ -645,16 +642,18 @@ header {
 
   .author-info {
     width: 100%;
+    height: auto;
     flex-direction: column;
   }
 
   .info-text {
     height: 70%;
     width: 100%;
+    padding: 1rem 1rem;
   }
 
   .page-container {
-    gap: 13rem 0;
+    gap: 1rem 0;
   }
 
   .author-info img {
