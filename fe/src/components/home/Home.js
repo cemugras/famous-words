@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>Home</title>
+        <title>Quotes Cyclopedia</title>
         <meta name='description' content='Home page' />
       </Helmet>
       <Banner />
