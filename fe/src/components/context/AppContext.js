@@ -54,7 +54,7 @@ export const AppProvider = ({children}) => {
 
     const getDataByTopic = async (topic) => {
         try {
-            const response = await axios.get(`https://quotescyclopedia-api.vercel.app/getRecordsByCategory?category=${topic}`);
+            const response = await axios.get(`https://quotescyclopedia-api.vercel.app/api/getRecordsByCategory?category=${topic}`);
             setTopicData(response.data.people);
 
         } catch (error) {
