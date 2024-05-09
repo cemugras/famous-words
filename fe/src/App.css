@@ -26,7 +26,7 @@ html {
 }
 
 .navbar-logo {
-  width: 100px;
+  width: 200px;
 }
 
 .navbar nav {
@@ -626,13 +626,14 @@ header {
   }
 
   .navbar-logo {
-    width: 120px;
+    width: 200px;
   }
 
   .navbar {
     flex-direction: column;
     height: 30vh;
-    gap: 0;
+    gap: 1rem 0;
+    margin: 1rem 0;
   }
 
   .navbar nav a {
@@ -676,7 +677,7 @@ header {
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .navbar-logo {
-    width: 150px;
+    width: 200px;
   }
 
   .navbar nav a {
