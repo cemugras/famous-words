@@ -1,8 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import SocialShare from '../social-share/SocialShare';
 import Skeleton from './skeletonCard';
 
 const QuotesCard = ({data}) => {
+  const { urlEncryptor } = require('../../../../utils/endpointUtils');
+  const navigate = useNavigate();
+
   if (!data) {
     return <div className="author-quotes">
        <div className='quote-card'>
@@ -20,13 +24,17 @@ const QuotesCard = ({data}) => {
       </div>
   }
 
+  const handleNavigate = (id, item) => {
+    navigate('/' + urlEncryptor(item), { state: { id: id } });
+  };
+
   return (
     <div className='author-quotes'>
       <div className='quote-card'>
         {data.map((item, index) => (
           <div className='animated-border-quote' key={index}>
             <blockquote>
-              <div className='card-header'>
+              <div className='card-header'  onClick={() => handleNavigate(item.id, item.personName)}>
                 <div style={{ marginRight: '10px', width: '50px', height: '50px' }}>
                   <img src={item.photoUrl} alt='User' style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
                 </div>
