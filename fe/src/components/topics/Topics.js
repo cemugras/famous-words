@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import AppContext from '../context/AppContext';
 import {useNavigate} from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 const Topics = () => {
     const {allCategories} = useContext(AppContext);
@@ -36,6 +37,10 @@ const Topics = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Topics</title>
+                <meta name='description' content='Topics page'/>
+            </Helmet>
             <div id='scrolling'>
                 <ul className='list'>{topicsWithDividers}</ul>
                 {/* Listelenen öğeler */}
