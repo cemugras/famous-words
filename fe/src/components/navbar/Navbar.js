@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Logo from '../../assets/famous-quotes-logo.png';
+import Logo from '../../assets/quotes-cyclopedia-logo.png';
 import SearchBox from '../search-box/SearchBox';
 
 const Navbar = () => {
