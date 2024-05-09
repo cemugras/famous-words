@@ -517,7 +517,13 @@ button {
   height: 60px;
   border-radius: 50%;
   background: #a7c031;
+  transition: transform 0.3s ease-in-out; 
 }
+
+.Contact-avatar:hover {
+  transform: scale(1.4); 
+}
+
 .Contact-name {
   margin: 0;
   font-size: 1.3em;
