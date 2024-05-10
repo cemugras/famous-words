@@ -1,3 +1,8 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /admin/   # Yönetici panelini engelle
+Disallow: /private/ # Gizli içeriği engelle
+Disallow: /tmp/     # Geçici dizini engelle
+Disallow: /cgi-bin/ # CGI-bin dizinini engelle
+
+# Site haritası için
+Sitemap: https://www.quotescyclopedia.com/sitemap.xml
