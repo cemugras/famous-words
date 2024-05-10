@@ -5,10 +5,6 @@ import { Helmet } from 'react-helmet';
 const Home = () => {
   return (
     <div>
-      <Helmet>
-        <title>Quotes Cyclopedia</title>
-        <meta name='description' content='Home page' />
-      </Helmet>
       <Banner />
       <Cards />
     </div>

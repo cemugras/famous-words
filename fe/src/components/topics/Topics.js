@@ -39,11 +39,11 @@ const Topics = () => {
         <div>
             <Helmet>
                 <title>Topics</title>
-                <meta name='description' content='Topics page'/>
+                <meta name='description' content='Find a wide range of topics. Dive into curated collections of quotes and sayings, organized for easy exploration and inspiration.'/>
             </Helmet>
             <div id='scrolling'>
+                <h1>Inspirational Quote's Topics</h1>
                 <ul className='list'>{topicsWithDividers}</ul>
-                {/* Listelenen öğeler */}
             </div>
         </div>
     );

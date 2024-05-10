@@ -20,15 +20,20 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
-      <img onClick={handleHomeNavigate} className='navbar-logo' src={Logo} alt='famous-quotes' />
+      <img
+        onClick={handleHomeNavigate}
+        className='navbar-logo'
+        src={Logo}
+        alt='quotes-cyclopedia'
+        title='quotes-cyclopedia'
+        loading='auto'
+        width='200px'
+        height='80px'
+      />
       <nav>
         <a onClick={handleHomeNavigate}>HOME</a>
-        <a onClick={handleAuthorsNavigate}>
-          AUTHORS
-        </a>
-        <a onClick={handleTopicsNavigate}>
-          TOPICS
-        </a>
+        <a onClick={handleAuthorsNavigate}>AUTHORS</a>
+        <a onClick={handleTopicsNavigate}>TOPICS</a>
       </nav>
       <SearchBox />
     </div>

@@ -35,6 +35,7 @@ const Topic = () => {
       <Helmet>
         <title>{capitalizedCategory}</title>
       </Helmet>
+      <h1>{capitalizedCategory}</h1>
       <QuotesCard data={topicData} />
     </div>
   );

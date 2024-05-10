@@ -36,13 +36,9 @@ const QuotesCard = ({data}) => {
             <blockquote>
               <div className='card-header'  onClick={() => handleNavigate(item.id, item.personName)}>
                 <div style={{ marginRight: '10px', width: '50px', height: '50px' }}>
-                  <img src={item.photoUrl} alt='User' style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
+                  <img src={item.photoUrl} alt={`${item.personName}`} title={`${item.personName}'s quotes`} width='100%' height='100%' style={{borderRadius: '50%' }} loading='auto' />
                 </div>
                 <h3 style={{ margin: '0', fontSize: '1.2rem' }}>{item.personName}</h3>
-                <a
-                  href='https://example.com/emrebezci'
-                  style={{ textDecoration: 'none', color: 'inherit', fontSize: '0.9rem' }}
-                ></a>
               </div>
               {item.quotes.length > 0 && (
                 <div>
