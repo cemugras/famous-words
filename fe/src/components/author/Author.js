@@ -45,7 +45,7 @@ const Author = () => {
       <div className='author-header'>
         <h1>{authorData.personName}</h1>
         <div className='author-info'>
-          <img src={authorData.photoUrl} alt={authorData.personName} />
+          <img src={authorData.photoUrl} alt={authorData.personName} title={`${authorData.personName}'s life and quotes`} loading='auto' height='100%' width='50%'/>
           <div className='info-text'>
             <p>
               {showFullBiography ? authorData.biography : truncatedBiography}

@@ -25,10 +25,6 @@ html {
   margin: 2rem 0;
 }
 
-.navbar-logo {
-  width: 200px;
-}
-
 .navbar nav {
   height: 100%;
   display: flex;
@@ -69,6 +65,11 @@ html {
 .cards-container {
   padding: 2rem 0;
   width: 100%;
+}
+
+.cards-container h1{
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .card-header {
@@ -464,6 +465,11 @@ button {
 }
 
 /* AUTHORS PAGE */
+.authors-header{
+text-align: center;
+margin-top: 2rem;
+}
+
 .AlphabetNav {
   position: sticky;
   top: 0;
@@ -514,8 +520,6 @@ button {
 }
 .Contact-avatar {
   margin: 0 1em 0 0;
-  width: 60px;
-  height: 60px;
   border-radius: 50%;
   background: #a7c031;
   transition: transform 0.3s ease-in-out; 
@@ -618,6 +622,11 @@ header {
   padding-top: 44px;
 }
 
+#scrolling h1{
+text-align: center;
+margin-bottom: 2rem;
+}
+
 /* RESPONSIVE CSS */
 /* MOBILE SCREEN */
 @media screen and (max-width: 767px) {
@@ -672,6 +681,17 @@ header {
     width: 100%;
   }
 }
+
+#scrolling h1{
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  }
+
+  .authors-header{
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    }
 
 /* TABLET SCREEN */
 
