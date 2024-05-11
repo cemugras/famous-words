@@ -15,10 +15,9 @@ const App = () => {
             <AppProvider>
                 <Navbar/>
                 <Routes>
-                    <Route path='/home' element={<Home/>}></Route>
-                    <Route path='/authors' element={<Authors/>}></Route>
-                    <Route path='/topics' element={<Topics/>}></Route>
-                    <Route path='/' element={<Navigate to='/home'/>}/>
+                    <Route path='/' element={<Home/>}/>
+                    <Route path='/authors' element={<Authors/>}/>
+                    <Route path='/topics' element={<Topics/>}/>
                     <Route path="/:name" element={<Author/>}/>
                     <Route path="/category/:categoryName" element={<Topic/>}/>
                 </Routes>

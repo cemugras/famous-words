@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   const handleHomeNavigate = () => {
-    navigate('/home');
+    navigate('/');
   };
 
   return (
