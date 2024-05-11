@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Routes, Navigate} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {AppProvider} from './components/context/AppContext';
 import Home from './components/home/Home';
 import Authors from './components/authors/Authors';
