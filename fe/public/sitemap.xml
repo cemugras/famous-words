@@ -2,45 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    
+
     <url>
         <loc>https://quotescyclopedia.com/</loc>
         <lastmod>2024-05-15T19:19:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://quotescyclopedia.com/authors</loc>
         <lastmod>2024-05-15T19:22:47+00:00</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://quotescyclopedia.com/topics</loc>
         <lastmod>2024-05-15T19:23:36+00:00</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://quotescyclopedia.com/alan-turing-quotes-and-life</loc>
         <lastmod>2024-05-15T19:27:42+00:00</lastmod>
+        <changefreq>never</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://quotescyclopedia.com/carl-sagan-quotes-and-life</loc>
         <lastmod>2024-05-15T19:28:22+00:00</lastmod>
+        <changefreq>never</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://quotescyclopedia.com/elon-musk-quotes-and-life</loc>
         <lastmod>2024-05-15T19:29:08+00:00</lastmod>
+        <changefreq>never</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://quotescyclopedia.com/genghis-khan-quotes-and-life</loc>
         <lastmod>2024-05-15T19:29:38+00:00</lastmod>
+        <changefreq>never</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://quotescyclopedia.com/julius-caesar-quotes-and-life</loc>
         <lastmod>2024-05-15T19:30:26+00:00</lastmod>
+        <changefreq>never</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
