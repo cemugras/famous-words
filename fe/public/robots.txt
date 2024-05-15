@@ -1,8 +1,8 @@
 User-agent: *
-Disallow: /admin/   # Yönetici panelini engelle
-Disallow: /private/ # Gizli içeriği engelle
-Disallow: /tmp/     # Geçici dizini engelle
-Disallow: /cgi-bin/ # CGI-bin dizinini engelle
+Disallow: /admin/ 
+Disallow: /private/ 
+Disallow: /tmp/   
+Disallow: /cgi-bin/ 
 
 # Site haritası için
 Sitemap: https://www.quotescyclopedia.com/sitemap.xml
