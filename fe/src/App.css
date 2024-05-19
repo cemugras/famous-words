@@ -67,7 +67,7 @@ html {
   width: 100%;
 }
 
-.cards-container h1{
+.cards-container h1 {
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -465,9 +465,9 @@ button {
 }
 
 /* AUTHORS PAGE */
-.authors-header{
-text-align: center;
-margin-top: 2rem;
+.authors-header {
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .AlphabetNav {
@@ -502,6 +502,56 @@ margin-top: 2rem;
   background: #f46353;
   color: white;
 }
+
+.see-more {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.btn-more {
+  margin: 0 auto;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -0.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-more:focus {
+  color: #171e29;
+}
+
+.btn-more:hover {
+  border-color:  #0077c0;
+  color:  #0077c0;
+  fill:  #0077c0;
+}
+
+@media (min-width: 768px) {
+  .btn-more {
+    min-width: 170px;
+  }
+}
 /* Contact List */
 .ContactList {
   padding: 10em 2rem 0;
@@ -522,15 +572,16 @@ margin-top: 2rem;
   margin: 0 1em 0 0;
   border-radius: 50%;
   background: #a7c031;
-  transition: transform 0.3s ease-in-out; 
+  transition: transform 0.3s ease-in-out;
 }
 
-.card-header img{
-  transition: transform 0.3s ease-in-out; 
+.card-header img {
+  transition: transform 0.3s ease-in-out;
 }
 
-.Contact-avatar:hover, .card-header img:hover {
-  transform: scale(1.4); 
+.Contact-avatar:hover,
+.card-header img:hover {
+  transform: scale(1.4);
 }
 
 .Contact-name {
@@ -622,9 +673,9 @@ header {
   padding-top: 44px;
 }
 
-#scrolling h1{
-text-align: center;
-margin-bottom: 2rem;
+#scrolling h1 {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 /* RESPONSIVE CSS */
@@ -682,16 +733,16 @@ margin-bottom: 2rem;
   }
 }
 
-#scrolling h1{
+#scrolling h1 {
   margin: 1rem 0;
   font-size: 1.2rem;
-  }
+}
 
-  .authors-header{
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    }
+.authors-header {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
 
 /* TABLET SCREEN */
 

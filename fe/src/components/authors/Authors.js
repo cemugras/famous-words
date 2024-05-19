@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet';
 const Authors = () => {
   const { allDataForSearch } = useContext(AppContext);
   const [activeLetter, setActiveLetter] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(30); // Başlangıçta gösterilecek yazar sayısı
   const navigate = useNavigate();
   const { urlEncryptor } = require('../../utils/endpointUtils');
 
@@ -15,22 +16,25 @@ const Authors = () => {
   }
 
   const handleLetterClick = (letter) => {
-    if (activeLetter === letter) {
-      setActiveLetter(null);
-    } else {
-      setActiveLetter(letter);
-    }
+    setActiveLetter(activeLetter === letter ? null : letter);
+    setVisibleCount(30); // Yeni harfe tıklandığında gösterilecek yazar sayısını sıfırla
   };
 
   const handleNavigate = (id, person) => {
     navigate('/' + urlEncryptor(person), { state: { id: id } });
   };
 
-  const displayedContacts = !activeLetter
-    ? allDataForSearch.sort((a, b) => a.person.localeCompare(b.person))
-    : allDataForSearch
-        .sort((a, b) => a.person.localeCompare(b.person))
-        .filter((contact) => contact.person[0].toUpperCase() === activeLetter);
+  const filteredContacts = !activeLetter
+    ? allDataForSearch
+    : allDataForSearch.filter((contact) => contact.person[0].toUpperCase() === activeLetter);
+
+  const displayedContacts = filteredContacts
+    .sort((a, b) => a.person.localeCompare(b.person))
+    .slice(0, visibleCount);
+
+  const loadMore = () => {
+    setVisibleCount((prevCount) => prevCount + 30); // Daha fazla yazar göstermek için sayıyı artır
+  };
 
   return (
     <>
@@ -65,6 +69,11 @@ const Authors = () => {
           ))}
         </div>
       )}
+      <div className='see-more'>
+      {visibleCount < filteredContacts.length && (
+        <button className='btn-more' onClick={loadMore}>More</button>
+      )}
+      </div>
     </>
   );
 };
