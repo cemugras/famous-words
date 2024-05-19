@@ -32,9 +32,9 @@ export const AppProvider = ({children}) => {
         }
     };
 
-    const getDataById = async (id) => {
+    const getDataByName = async (name) => {
         try {
-            const response = await axios.get(`https://quotescyclopedia-api.vercel.app/api/getRecordById?id=${id}`);
+            const response = await axios.get(`https://quotescyclopedia-api.vercel.app/api/getRecordByName?name=${name}`);
             setAuthorData(response.data.person);
 
         } catch (error) {
@@ -74,7 +74,7 @@ export const AppProvider = ({children}) => {
             homePageData,
             authorData,
             allDataForSearch,
-            getDataById,
+            getDataByName,
             setAuthorData,
             allCategories,
             getDataByTopic,
