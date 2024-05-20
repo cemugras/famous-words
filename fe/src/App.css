@@ -322,6 +322,9 @@ button {
   display: flex;
   justify-content: flex-end;
   gap: 0 0.5rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 1rem;
 }
 /* AUTHOR PAGE */
 .author-header {
@@ -455,6 +458,7 @@ button {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+  position: relative;
 }
 
 .page-container {
